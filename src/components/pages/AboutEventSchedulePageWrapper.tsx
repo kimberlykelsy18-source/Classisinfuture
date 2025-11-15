@@ -5,9 +5,5 @@ interface AboutEventSchedulePageWrapperProps {
 }
 
 export function AboutEventSchedulePageWrapper({ onNavigate }: AboutEventSchedulePageWrapperProps) {
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <AboutEventSchedulePage />
-    </div>
-  );
+  return <AboutEventSchedulePage />;
 }

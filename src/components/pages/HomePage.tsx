@@ -27,9 +27,5 @@ export function HomePage({ onNavigate }: HomePageProps) {
     };
   }, [onNavigate]);
 
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <LandingPage />
-    </div>
-  );
+  return <LandingPage />;
 }

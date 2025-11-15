@@ -60,7 +60,7 @@
   }
 }
 
-/* ==================== GLOBAL RESET ==================== */
+/* ==================== RESET ==================== */
 
 * {
   box-sizing: border-box;
@@ -69,27 +69,19 @@
 html {
   font-size: 16px;
   overflow-x: hidden;
-  width: 100%;
 }
 
 body {
-  overflow-x: hidden;
-  width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 #root {
   overflow-x: hidden;
-  width: 100%;
 }
 
-main {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* ==================== NAVIGATION - ALWAYS ON TOP ==================== */
+/* ==================== NAVIGATION ==================== */
 
 nav {
   position: fixed;
@@ -97,158 +89,147 @@ nav {
   left: 0;
   right: 0;
   z-index: 9999 !important;
-  width: 100%;
 }
 
-nav [class*="absolute"] {
-  z-index: 10002 !important;
-}
-
-/* ==================== FIGMA PAGES BASE VISIBILITY ==================== */
+/* ==================== FIGMA PAGES - BASE ==================== */
 
 [data-name="Landing page"],
 [data-name*="About -"] {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  background: white;
 }
 
-/* ==================== DESKTOP DISPLAY (DEFAULT) ==================== */
+/* ==================== DESKTOP - FULL SIZE ==================== */
 
-/* Large desktop - show full design centered */
+/* For screens 1729px and larger - center the 1728px design */
 @media (min-width: 1729px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    margin: 0 auto;
-  }
-}
-
-/* Standard desktop - show full design, may need horizontal scroll or scale slightly */
-@media (min-width: 1024px) and (max-width: 1728px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    margin: 0 auto;
-    /* Allow horizontal scroll on smaller desktops if needed */
+  .page-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
-  body {
-    overflow-x: auto;
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
   }
 }
 
-/* ==================== TABLET & MOBILE RESPONSIVE ==================== */
+/* For screens exactly 1728px or between 1024-1728px - show full width */
+@media (min-width: 1024px) and (max-width: 1728px) {
+  .page-container {
+    width: 100%;
+    overflow-x: auto; /* Allow scroll if needed */
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    min-width: 1728px;
+  }
+}
 
-/* Tablet landscape and below - use zoom/scale approach */
-@media (max-width: 1023px) {
+/* ==================== TABLET & MOBILE - USE ZOOM ==================== */
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
   body {
     overflow-x: hidden !important;
   }
   
+  .page-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
   [data-name="Landing page"],
   [data-name*="About -"] {
     width: 1728px;
-    transform-origin: top left;
-    position: relative;
-    left: 0;
-  }
-}
-
-/* Tablet landscape: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: scale(0.59);
-    /* 0.59 makes 1728px fit perfectly in ~1020px width */
-    min-height: 4000px; /* Approximate scaled height */
-  }
-  
-  /* Adjust the container to fit scaled content */
-  .mobile-wrapper,
-  main > div {
-    width: 100vw;
-    overflow-x: hidden;
+    zoom: 0.59; /* 1728 * 0.59 ≈ 1020px */
+    -moz-transform: scale(0.59);
+    -moz-transform-origin: 0 0;
   }
 }
 
 /* Mobile landscape: 481px - 767px */
 @media (min-width: 481px) and (max-width: 767px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: scale(0.44);
-    /* 0.44 makes 1728px fit in ~760px width */
-    min-height: 3000px;
+  body {
+    overflow-x: hidden !important;
   }
   
-  .mobile-wrapper,
-  main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    zoom: 0.44; /* 1728 * 0.44 ≈ 760px */
+    -moz-transform: scale(0.44);
+    -moz-transform-origin: 0 0;
   }
 }
 
 /* Mobile portrait: 376px - 480px */
 @media (min-width: 376px) and (max-width: 480px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: scale(0.275);
-    /* 0.275 makes 1728px fit in ~475px width */
-    min-height: 2400px;
+  body {
+    overflow-x: hidden !important;
   }
   
-  .mobile-wrapper,
-  main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    zoom: 0.275; /* 1728 * 0.275 ≈ 475px */
+    -moz-transform: scale(0.275);
+    -moz-transform-origin: 0 0;
   }
 }
 
 /* Small mobile: 320px - 375px */
 @media (min-width: 320px) and (max-width: 375px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: scale(0.22);
-    /* 0.22 makes 1728px fit in ~380px width */
-    min-height: 2000px;
-  }
-  
-  .mobile-wrapper,
-  main > div {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-/* Extra small mobile: <320px */
-@media (max-width: 319px) {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: scale(0.18);
-    /* 0.18 makes 1728px fit in ~311px width */
-    min-height: 1800px;
-  }
-  
-  .mobile-wrapper,
-  main > div {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-/* ==================== PREVENT HORIZONTAL SCROLL ON MOBILE ==================== */
-
-@media (max-width: 1023px) {
-  html,
-  body,
-  #root,
-  main {
+  body {
     overflow-x: hidden !important;
-    max-width: 100vw !important;
   }
   
-  * {
-    max-width: 100vw;
+  .page-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    zoom: 0.22; /* 1728 * 0.22 ≈ 380px */
+    -moz-transform: scale(0.22);
+    -moz-transform-origin: 0 0;
+  }
+}
+
+/* Extra small: < 320px */
+@media (max-width: 319px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .page-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    zoom: 0.18; /* 1728 * 0.18 ≈ 311px */
+    -moz-transform: scale(0.18);
+    -moz-transform-origin: 0 0;
   }
 }
 
@@ -265,35 +246,8 @@ img[src^="figma:asset"] {
   min-height: 200px;
 }
 
-/* ==================== TEXT ==================== */
-
-* {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
 /* ==================== BUTTONS ==================== */
 
 button {
   cursor: pointer;
-}
-
-/* ==================== ACCESSIBILITY ==================== */
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ==================== PRINT STYLES ==================== */
-
-@media print {
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    transform: none !important;
-    width: 100% !important;
-  }
 }

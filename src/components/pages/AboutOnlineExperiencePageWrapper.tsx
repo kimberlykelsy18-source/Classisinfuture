@@ -5,9 +5,5 @@ interface AboutOnlineExperiencePageWrapperProps {
 }
 
 export function AboutOnlineExperiencePageWrapper({ onNavigate }: AboutOnlineExperiencePageWrapperProps) {
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <AboutOnlineExperiencePage />
-    </div>
-  );
+  return <AboutOnlineExperiencePage />;
 }

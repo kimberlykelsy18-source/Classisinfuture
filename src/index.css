@@ -4262,25 +4262,21 @@
 }
 
 html {
-  width: 100%;
   font-size: 16px;
   overflow-x: hidden;
 }
 
 body {
-  width: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-#root, main {
-  width: 100%;
+#root {
   overflow-x: hidden;
 }
 
 nav {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -4288,115 +4284,124 @@ nav {
   z-index: 9999 !important;
 }
 
-nav [class*="absolute"] {
-  z-index: 10002 !important;
-}
-
 [data-name="Landing page"], [data-name*="About -"] {
+  background: #fff;
   visibility: visible !important;
   opacity: 1 !important;
   display: block !important;
 }
 
 @media (width >= 1729px) {
+  .page-container {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+  }
+
   [data-name="Landing page"], [data-name*="About -"] {
     width: 1728px;
-    margin: 0 auto;
   }
 }
 
 @media (width >= 1024px) and (width <= 1728px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    width: 1728px;
-    margin: 0 auto;
-  }
-
-  body {
+  .page-container {
+    width: 100%;
     overflow-x: auto;
   }
-}
-
-@media (width <= 1023px) {
-  body {
-    overflow-x: hidden !important;
-  }
 
   [data-name="Landing page"], [data-name*="About -"] {
-    transform-origin: 0 0;
     width: 1728px;
-    position: relative;
-    left: 0;
+    min-width: 1728px;
   }
 }
 
 @media (width >= 768px) and (width <= 1023px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    min-height: 4000px;
-    transform: scale(.59);
+  body {
+    overflow-x: hidden !important;
   }
 
-  .mobile-wrapper, main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    zoom: .59;
+    -moz-transform-origin: 0 0;
+    width: 1728px;
+    -moz-transform: scale(.59);
   }
 }
 
 @media (width >= 481px) and (width <= 767px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    min-height: 3000px;
-    transform: scale(.44);
+  body {
+    overflow-x: hidden !important;
   }
 
-  .mobile-wrapper, main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    zoom: .44;
+    -moz-transform-origin: 0 0;
+    width: 1728px;
+    -moz-transform: scale(.44);
   }
 }
 
 @media (width >= 376px) and (width <= 480px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    min-height: 2400px;
-    transform: scale(.275);
+  body {
+    overflow-x: hidden !important;
   }
 
-  .mobile-wrapper, main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    zoom: .275;
+    -moz-transform-origin: 0 0;
+    width: 1728px;
+    -moz-transform: scale(.275);
   }
 }
 
 @media (width >= 320px) and (width <= 375px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    min-height: 2000px;
-    transform: scale(.22);
+  body {
+    overflow-x: hidden !important;
   }
 
-  .mobile-wrapper, main > div {
+  .page-container {
     width: 100vw;
     overflow-x: hidden;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    zoom: .22;
+    -moz-transform-origin: 0 0;
+    width: 1728px;
+    -moz-transform: scale(.22);
   }
 }
 
 @media (width <= 319px) {
-  [data-name="Landing page"], [data-name*="About -"] {
-    min-height: 1800px;
-    transform: scale(.18);
-  }
-
-  .mobile-wrapper, main > div {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-@media (width <= 1023px) {
-  html, body, #root, main {
-    max-width: 100vw !important;
+  body {
     overflow-x: hidden !important;
   }
 
-  * {
-    max-width: 100vw;
+  .page-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    zoom: .18;
+    -moz-transform-origin: 0 0;
+    width: 1728px;
+    -moz-transform: scale(.18);
   }
 }
 
@@ -4411,28 +4416,8 @@ img[src^="figma:asset"] {
   min-height: 200px;
 }
 
-* {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
 button {
   cursor: pointer;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}
-
-@media print {
-  [data-name="Landing page"], [data-name*="About -"] {
-    width: 100% !important;
-    transform: none !important;
-  }
 }
 
 @property --tw-translate-x {

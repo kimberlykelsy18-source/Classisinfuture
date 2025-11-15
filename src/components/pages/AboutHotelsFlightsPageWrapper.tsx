@@ -5,9 +5,5 @@ interface AboutHotelsFlightsPageWrapperProps {
 }
 
 export function AboutHotelsFlightsPageWrapper({ onNavigate }: AboutHotelsFlightsPageWrapperProps) {
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <AboutHotelsFlightsPage />
-    </div>
-  );
+  return <AboutHotelsFlightsPage />;
 }

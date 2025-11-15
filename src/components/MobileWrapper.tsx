@@ -6,15 +6,7 @@ interface MobileWrapperProps {
 
 export function MobileWrapper({ children }: MobileWrapperProps) {
   return (
-    <div
-      className="w-full overflow-x-hidden"
-      style={{
-        width: '100%',
-        maxWidth: '100vw',
-        overflowX: 'hidden',
-        position: 'relative'
-      }}
-    >
+    <div className="page-container">
       {children}
     </div>
   );

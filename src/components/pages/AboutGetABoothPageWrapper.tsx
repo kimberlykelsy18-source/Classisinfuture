@@ -5,9 +5,5 @@ interface AboutGetABoothPageWrapperProps {
 }
 
 export function AboutGetABoothPageWrapper({ onNavigate }: AboutGetABoothPageWrapperProps) {
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <AboutGetABoothPage />
-    </div>
-  );
+  return <AboutGetABoothPage />;
 }

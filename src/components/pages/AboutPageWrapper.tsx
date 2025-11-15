@@ -5,9 +5,5 @@ interface AboutPageWrapperProps {
 }
 
 export function AboutPageWrapper({ onNavigate }: AboutPageWrapperProps) {
-  return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <AboutOverviewPage />
-    </div>
-  );
+  return <AboutOverviewPage />;
 }

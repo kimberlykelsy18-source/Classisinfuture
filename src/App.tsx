@@ -40,14 +40,14 @@ export default function App() {
   }, [currentPage]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white w-full overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-white w-full">
       <Toaster position="top-right" richColors />
       
       {/* Navigation */}
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Page Content with padding for fixed nav */}
-      <main className="flex-grow pt-16 md:pt-20 lg:pt-24 w-full overflow-x-hidden">
+      <main className="flex-grow pt-16 md:pt-20 lg:pt-24 w-full">
         <MobileWrapper>
           {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
           {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}
