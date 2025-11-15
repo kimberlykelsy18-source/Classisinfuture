@@ -7,6 +7,14 @@ interface HomePageProps {
 
 export function HomePage({ onNavigate }: HomePageProps) {
   useEffect(() => {
+    // Force mobile visibility
+    const landingPage = document.querySelector('[data-name="Landing page"]');
+    if (landingPage) {
+      (landingPage as HTMLElement).style.display = 'block';
+      (landingPage as HTMLElement).style.visibility = 'visible';
+      (landingPage as HTMLElement).style.opacity = '1';
+    }
+
     // Add click handlers for all buttons
     const handleButtonClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -28,8 +36,31 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [onNavigate]);
 
   return (
-    <div className="w-full min-h-screen bg-white overflow-x-hidden overflow-y-visible">
-      <LandingPage />
+    <div 
+      className="w-full min-h-screen bg-white"
+      style={{
+        display: 'block',
+        visibility: 'visible',
+        overflow: 'visible',
+        position: 'relative',
+        width: '100%',
+        maxWidth: '100vw',
+        overflowX: 'hidden'
+      }}
+    >
+      <div
+        style={{
+          display: 'block',
+          visibility: 'visible',
+          opacity: 1,
+          width: '100%',
+          maxWidth: '100vw',
+          overflowX: 'hidden',
+          position: 'relative'
+        }}
+      >
+        <LandingPage />
+      </div>
     </div>
   );
 }

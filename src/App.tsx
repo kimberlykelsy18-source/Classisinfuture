@@ -8,6 +8,7 @@ import { AboutEventSchedulePageWrapper } from './components/pages/AboutEventSche
 import { AboutGetABoothPageWrapper } from './components/pages/AboutGetABoothPageWrapper';
 import { AboutOnlineExperiencePageWrapper } from './components/pages/AboutOnlineExperiencePageWrapper';
 import { AboutHotelsFlightsPageWrapper } from './components/pages/AboutHotelsFlightsPageWrapper';
+import { MobileWrapper } from './components/MobileWrapper';
 import { Toaster } from 'sonner@2.0.3';
 
 type Page = 'home' | 'tickets' | 'about' | 'event-schedule' | 'get-booth' | 'online-experience' | 'hotels-flights';
@@ -46,14 +47,24 @@ export default function App() {
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Page Content with padding for fixed nav */}
-      <main className="flex-grow pt-16 md:pt-20 lg:pt-24 w-full max-w-[100vw] overflow-x-hidden">
-        {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
-        {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}
-        {currentPage === 'about' && <AboutPageWrapper onNavigate={handleNavigate} />}
-        {currentPage === 'event-schedule' && <AboutEventSchedulePageWrapper onNavigate={handleNavigate} />}
-        {currentPage === 'get-booth' && <AboutGetABoothPageWrapper onNavigate={handleNavigate} />}
-        {currentPage === 'online-experience' && <AboutOnlineExperiencePageWrapper onNavigate={handleNavigate} />}
-        {currentPage === 'hotels-flights' && <AboutHotelsFlightsPageWrapper onNavigate={handleNavigate} />}
+      <main 
+        className="flex-grow pt-16 md:pt-20 lg:pt-24 w-full max-w-[100vw] overflow-x-hidden"
+        style={{
+          display: 'block',
+          visibility: 'visible',
+          overflowX: 'hidden',
+          width: '100%'
+        }}
+      >
+        <MobileWrapper>
+          {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
+          {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}
+          {currentPage === 'about' && <AboutPageWrapper onNavigate={handleNavigate} />}
+          {currentPage === 'event-schedule' && <AboutEventSchedulePageWrapper onNavigate={handleNavigate} />}
+          {currentPage === 'get-booth' && <AboutGetABoothPageWrapper onNavigate={handleNavigate} />}
+          {currentPage === 'online-experience' && <AboutOnlineExperiencePageWrapper onNavigate={handleNavigate} />}
+          {currentPage === 'hotels-flights' && <AboutHotelsFlightsPageWrapper onNavigate={handleNavigate} />}
+        </MobileWrapper>
       </main>
 
       {/* Footer */}
