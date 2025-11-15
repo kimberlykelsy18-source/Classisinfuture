@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 
 export function Countdown() {
-  // Target date: Set this to your conference date
-  // For demo purposes, let's set it to a date in the future
   const targetDate = new Date('2026-03-15T09:00:00').getTime();
   
   const [timeLeft, setTimeLeft] = useState({
@@ -34,43 +32,43 @@ export function Countdown() {
   }, [targetDate]);
 
   return (
-    <div className="content-stretch flex gap-[88px] items-start relative shrink-0">
+    <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-12 w-full max-w-[100vw] px-4">
       {/* Days */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] text-center w-[288px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] tracking-[-3.2px] w-full">
+      <div className="flex flex-col items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none">
           {timeLeft.days}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-2">
           Days
         </p>
       </div>
 
       {/* Colon */}
-      <p className="font-['Space_Mono:Bold',sans-serif] leading-[90px] not-italic relative shrink-0 text-[#6923d2] text-[160px] text-nowrap tracking-[-3.2px] whitespace-pre">
+      <p className="font-['Space_Mono:Bold',sans-serif] text-[#6923d2] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none">
         :
       </p>
 
       {/* Hours */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] text-center w-[193px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] tracking-[-3.2px] w-full">
+      <div className="flex flex-col items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none">
           {String(timeLeft.hours).padStart(2, '0')}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-2">
           Hours
         </p>
       </div>
 
       {/* Colon */}
-      <p className="font-['Space_Mono:Bold',sans-serif] leading-[90px] not-italic relative shrink-0 text-[#6923d2] text-[160px] text-nowrap tracking-[-3.2px] whitespace-pre">
+      <p className="font-['Space_Mono:Bold',sans-serif] text-[#6923d2] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none">
         :
       </p>
 
       {/* Minutes */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] w-[204px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] text-right tracking-[-3.2px] w-full">
+      <div className="flex flex-col items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none">
           {String(timeLeft.minutes).padStart(2, '0')}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] text-center tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-2">
           Minutes
         </p>
       </div>

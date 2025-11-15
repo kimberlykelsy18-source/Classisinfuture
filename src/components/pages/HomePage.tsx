@@ -28,8 +28,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [onNavigate]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden flex justify-center bg-white">
-      <div className="relative w-[1728px] max-w-full">
+    <div className="w-full bg-white overflow-x-hidden">
+      {/* Wrapper with scale for responsive design */}
+      <div 
+        className="w-full mx-auto"
+        style={{
+          maxWidth: '100vw',
+          overflowX: 'hidden'
+        }}
+      >
         <LandingPage />
       </div>
     </div>
