@@ -2816,6 +2816,10 @@
     overflow-y: auto;
   }
 
+  .overflow-y-visible {
+    overflow-y: visible;
+  }
+
   .rounded {
     border-radius: .25rem;
   }
@@ -4308,62 +4312,6 @@ nav [class*="absolute"] {
   z-index: 10002 !important;
 }
 
-[data-name="Landing page"] {
-  visibility: visible !important;
-  opacity: 1 !important;
-  width: 1728px !important;
-  height: auto !important;
-  min-height: 8000px !important;
-  margin: 0 auto !important;
-  display: block !important;
-  position: relative !important;
-}
-
-@media (width >= 1729px) {
-  .page-container {
-    width: 1728px;
-    margin: 0 auto;
-  }
-}
-
-@media (width >= 1024px) and (width <= 1728px) {
-  .page-container {
-    width: 100%;
-    max-width: 1728px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  [data-name="Landing page"], [data-name*="About"] {
-    transform: scale(calc(100vw / 1728));
-    transform-origin: top;
-  }
-}
-
-@media (width >= 768px) and (width <= 1023px) {
-  [data-name="Landing page"], [data-name*="About"] {
-    transform-origin: top;
-    margin-bottom: -4000px;
-    transform: scale(.45);
-  }
-}
-
-@media (width <= 767px) {
-  [data-name="Landing page"], [data-name*="About"] {
-    transform-origin: top;
-    margin-bottom: -6000px;
-    transform: scale(.25);
-  }
-}
-
-@media (width <= 375px) {
-  [data-name="Landing page"], [data-name*="About"] {
-    transform-origin: top;
-    margin-bottom: -6500px;
-    transform: scale(.2);
-  }
-}
-
 [data-name="Landing page"], [data-name="About - Overview Page"], [data-name="About - Event Schedule Page"], [data-name="About - Get a Booth Page"], [data-name="About - Hotels & Flights Page"], [data-name="About - Online Experience Page"] {
   visibility: visible !important;
   opacity: 1 !important;
@@ -4371,9 +4319,91 @@ nav [class*="absolute"] {
   position: relative !important;
 }
 
+@media (width >= 1729px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    width: 1728px;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
+@media (width >= 1280px) and (width <= 1728px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(calc(100vw / 1800));
+    transform-origin: top;
+    margin: 0 auto;
+  }
+}
+
+@media (width >= 1024px) and (width <= 1279px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    transform-origin: top;
+    width: 1728px;
+    margin: 0 auto;
+    transform: scale(.7);
+  }
+}
+
+@media (width >= 768px) and (width <= 1023px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    transform-origin: top;
+    width: 1728px;
+    margin: 0 auto;
+    transform: scale(.5);
+  }
+
+  main {
+    padding-bottom: 2rem !important;
+  }
+}
+
+@media (width >= 481px) and (width <= 767px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    transform-origin: top;
+    width: 1728px;
+    margin: 0 auto;
+    transform: scale(.4);
+  }
+
+  .page-wrapper {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (width <= 480px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    transform-origin: top;
+    width: 1728px;
+    margin: 0 auto;
+    transform: scale(.3);
+  }
+
+  main {
+    min-height: 100vh;
+    overflow: hidden auto !important;
+  }
+}
+
+@media (width <= 375px) {
+  [data-name="Landing page"], [data-name*="About -"] {
+    transform-origin: top;
+    width: 1728px;
+    margin: 0 auto;
+    transform: scale(.25);
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+img[src^="figma:asset"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 200px;
   display: block;
 }
 
@@ -4403,6 +4433,24 @@ button {
 @media (width >= 768px) {
   .mobile-only {
     display: none;
+  }
+}
+
+@media (width <= 767px) {
+  body {
+    overflow: hidden auto !important;
+  }
+
+  main {
+    visibility: visible !important;
+    display: block !important;
+    overflow: hidden visible !important;
+  }
+
+  [data-name="Landing page"], [data-name*="About -"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
   }
 }
 

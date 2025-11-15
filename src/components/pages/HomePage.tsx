@@ -28,7 +28,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [onNavigate]);
 
   return (
-    <div className="w-full min-h-screen bg-white overflow-x-hidden">
+    <div className="w-full min-h-screen bg-white overflow-x-hidden overflow-y-visible">
       <LandingPage />
     </div>
   );

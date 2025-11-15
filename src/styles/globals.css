@@ -107,79 +107,9 @@ nav [class*="absolute"] {
   z-index: 10002 !important;
 }
 
-/* ==================== LANDING PAGE - FIX VISIBILITY ==================== */
+/* ==================== FIGMA PAGES VISIBILITY ==================== */
 
-/* Remove size-full constraint that causes invisibility */
-[data-name="Landing page"] {
-  width: 1728px !important;
-  height: auto !important;
-  min-height: 8000px !important;
-  position: relative !important;
-  margin: 0 auto !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* ==================== RESPONSIVE - CONTAINER APPROACH ==================== */
-
-/* Desktop - full width */
-@media (min-width: 1729px) {
-  .page-container {
-    width: 1728px;
-    margin: 0 auto;
-  }
-}
-
-/* Laptop - scale to fit */
-@media (min-width: 1024px) and (max-width: 1728px) {
-  .page-container {
-    width: 100%;
-    max-width: 1728px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  [data-name="Landing page"],
-  [data-name*="About"] {
-    transform: scale(calc(100vw / 1728));
-    transform-origin: top center;
-  }
-}
-
-/* Tablet - scale down more */
-@media (min-width: 768px) and (max-width: 1023px) {
-  [data-name="Landing page"],
-  [data-name*="About"] {
-    transform: scale(0.45);
-    transform-origin: top center;
-    margin-bottom: -4000px;
-  }
-}
-
-/* Mobile - scale to fit small screens */
-@media (max-width: 767px) {
-  [data-name="Landing page"],
-  [data-name*="About"] {
-    transform: scale(0.25);
-    transform-origin: top center;
-    margin-bottom: -6000px;
-  }
-}
-
-/* Extra small mobile */
-@media (max-width: 375px) {
-  [data-name="Landing page"],
-  [data-name*="About"] {
-    transform: scale(0.2);
-    transform-origin: top center;
-    margin-bottom: -6500px;
-  }
-}
-
-/* ==================== ENSURE VISIBILITY ==================== */
-
-/* Force all imported pages to be visible */
+/* Ensure all Figma imported pages are visible */
 [data-name="Landing page"],
 [data-name="About - Overview Page"],
 [data-name="About - Event Schedule Page"],
@@ -192,6 +122,105 @@ nav [class*="absolute"] {
   position: relative !important;
 }
 
+/* ==================== RESPONSIVE SCALING - MOBILE FIX ==================== */
+
+/* Desktop - Original size, centered */
+@media (min-width: 1729px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
+/* Large laptop - fit to screen */
+@media (min-width: 1280px) and (max-width: 1728px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(calc(100vw / 1800));
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+}
+
+/* Laptop/Tablet landscape - scale to 70% */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(0.7);
+    transform-origin: top center;
+    margin: 0 auto 0 auto;
+  }
+}
+
+/* Tablet portrait - scale to 50% WITH PROPER SPACING */
+@media (min-width: 768px) and (max-width: 1023px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(0.5);
+    transform-origin: top center;
+    margin: 0 auto;
+    /* Don't use negative margin - let it flow naturally */
+  }
+  
+  /* Add padding to wrapper to prevent overlap */
+  main {
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Mobile landscape - scale to 40% WITH VISIBLE CONTENT */
+@media (min-width: 481px) and (max-width: 767px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(0.4);
+    transform-origin: top center;
+    margin: 0 auto;
+    /* Critical: Keep content visible */
+  }
+  
+  /* Ensure wrapper has enough height */
+  .page-wrapper {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Mobile portrait - scale to 30% WITH SCROLLING */
+@media (max-width: 480px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(0.3);
+    transform-origin: top center;
+    margin: 0 auto;
+    /* Allow natural scrolling - NO negative margins */
+  }
+  
+  /* Ensure page is scrollable */
+  main {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-height: 100vh;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    width: 1728px;
+    transform: scale(0.25);
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+}
+
 /* ==================== IMAGES ==================== */
 
 img {
@@ -200,10 +229,12 @@ img {
   display: block;
 }
 
-/* ==================== FLEX & GRID ==================== */
-
-/* Don't override flex/grid on imported Figma designs */
-/* Let them maintain their layout */
+/* Handle missing images gracefully */
+img[src^="figma:asset"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 200px;
+  display: block;
+}
 
 /* ==================== TEXT WRAPPING ==================== */
 
@@ -237,5 +268,30 @@ button {
 @media (min-width: 768px) {
   .mobile-only {
     display: none;
+  }
+}
+
+/* ==================== ENSURE MOBILE VISIBILITY ==================== */
+
+/* Critical: Make sure content is visible on mobile */
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  
+  main {
+    display: block !important;
+    visibility: visible !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* All pages should be visible and scrollable */
+  [data-name="Landing page"],
+  [data-name*="About -"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }

@@ -35,10 +35,8 @@ export function AboutEventSchedulePageWrapper({ onNavigate }: AboutEventSchedule
   }, [onNavigate]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden flex justify-center bg-white">
-      <div className="relative w-full" style={{ minHeight: '8000px' }}>
-        <AboutEventSchedulePage />
-      </div>
+    <div className="relative w-full min-h-screen overflow-x-hidden overflow-y-visible flex justify-center bg-white">
+      <AboutEventSchedulePage />
     </div>
   );
 }

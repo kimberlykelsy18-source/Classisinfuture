@@ -46,10 +46,8 @@ export function AboutGetABoothPageWrapper({ onNavigate }: AboutGetABoothPageWrap
   }, [onNavigate]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden flex justify-center bg-white">
-      <div className="relative w-full" style={{ minHeight: '8000px' }}>
-        <AboutGetABoothPage />
-      </div>
+    <div className="relative w-full min-h-screen overflow-x-hidden overflow-y-visible flex justify-center bg-white">
+      <AboutGetABoothPage />
     </div>
   );
 }
