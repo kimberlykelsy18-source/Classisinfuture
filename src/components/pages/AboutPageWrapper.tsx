@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import AboutOverviewPage from '../../imports/AboutOverviewPage';
 
 interface AboutPageWrapperProps {
@@ -6,24 +5,8 @@ interface AboutPageWrapperProps {
 }
 
 export function AboutPageWrapper({ onNavigate }: AboutPageWrapperProps) {
-  useEffect(() => {
-    // Make all "Get Tickets" buttons navigate to tickets page
-    const buttons = document.querySelectorAll('button, div[data-name*="Button"]');
-    
-    buttons.forEach((button) => {
-      const text = button.textContent;
-      if (text?.includes('Get Tickets') || text?.includes('Get a ticket')) {
-        button.addEventListener('click', (e) => {
-          e.stopPropagation();
-          onNavigate('tickets');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    });
-  }, [onNavigate]);
-
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden overflow-y-visible flex justify-center bg-white">
+    <div className="w-full bg-white overflow-x-hidden">
       <AboutOverviewPage />
     </div>
   );
