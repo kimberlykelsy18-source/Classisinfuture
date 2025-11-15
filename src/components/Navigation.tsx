@@ -36,9 +36,9 @@ export function Navigation({ currentPage = 'home', onNavigate }: NavigationProps
 
             {/* Desktop Navigation (hidden on mobile/tablet) */}
             <div className="hidden xl:flex items-center gap-4 2xl:gap-8">
-              {/* About Dropdown - Hoverable with clickable items */}
+              {/* About Dropdown - Hoverable AND clickable */}
               <div 
-                className="relative"
+                className="relative group"
                 style={{ zIndex: 10001 }}
                 onMouseEnter={() => setAboutDropdownOpen(true)}
                 onMouseLeave={() => setAboutDropdownOpen(false)}
@@ -51,65 +51,65 @@ export function Navigation({ currentPage = 'home', onNavigate }: NavigationProps
                     About
                   </span>
                   <ChevronDown 
-                    className={`w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-200 ${
+                    className={`w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-200 ${ 
                       aboutDropdownOpen ? 'rotate-180' : ''
                     }`} 
                   />
                 </button>
                 
-                {/* Dropdown Menu */}
-                {aboutDropdownOpen && (
-                  <div 
-                    className="absolute left-0 bg-black border border-white/20 rounded-lg shadow-2xl"
-                    style={{ 
-                      top: '100%',
-                      marginTop: '0.5rem',
-                      minWidth: '240px',
-                      zIndex: 10002
-                    }}
-                    onMouseEnter={() => setAboutDropdownOpen(true)}
-                    onMouseLeave={() => setAboutDropdownOpen(false)}
-                  >
-                    <div className="py-2 px-2">
-                      <button 
-                        onClick={() => { 
-                          onNavigate('about'); 
-                          setAboutDropdownOpen(false); 
-                        }}
-                        className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
-                      >
-                        Overview
-                      </button>
-                      <button 
-                        onClick={() => { 
-                          onNavigate('event-schedule'); 
-                          setAboutDropdownOpen(false); 
-                        }}
-                        className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
-                      >
-                        Event Schedule
-                      </button>
-                      <button 
-                        onClick={() => { 
-                          onNavigate('get-booth'); 
-                          setAboutDropdownOpen(false); 
-                        }}
-                        className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
-                      >
-                        Get a Booth
-                      </button>
-                      <button 
-                        onClick={() => { 
-                          onNavigate('online-experience'); 
-                          setAboutDropdownOpen(false); 
-                        }}
-                        className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
-                      >
-                        Online Experience
-                      </button>
-                    </div>
+                {/* Dropdown Menu - Shows on hover OR click */}
+                <div 
+                  className={`absolute left-0 bg-black border border-white/20 rounded-lg shadow-2xl transition-all duration-200 ${
+                    aboutDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                  }`}
+                  style={{ 
+                    top: '100%',
+                    marginTop: '0.5rem',
+                    minWidth: '240px',
+                    zIndex: 10002
+                  }}
+                  onMouseEnter={() => setAboutDropdownOpen(true)}
+                  onMouseLeave={() => setAboutDropdownOpen(false)}
+                >
+                  <div className="py-2 px-2">
+                    <button 
+                      onClick={() => { 
+                        onNavigate('about'); 
+                        setAboutDropdownOpen(false); 
+                      }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                    >
+                      Overview
+                    </button>
+                    <button 
+                      onClick={() => { 
+                        onNavigate('event-schedule'); 
+                        setAboutDropdownOpen(false); 
+                      }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                    >
+                      Event Schedule
+                    </button>
+                    <button 
+                      onClick={() => { 
+                        onNavigate('get-booth'); 
+                        setAboutDropdownOpen(false); 
+                      }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                    >
+                      Get a Booth
+                    </button>
+                    <button 
+                      onClick={() => { 
+                        onNavigate('online-experience'); 
+                        setAboutDropdownOpen(false); 
+                      }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                    >
+                      Online Experience
+                    </button>
                   </div>
-                )}
+                </div>
               </div>
 
               <button 

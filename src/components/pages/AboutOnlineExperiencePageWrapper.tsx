@@ -50,7 +50,7 @@ export function AboutOnlineExperiencePageWrapper({ onNavigate }: AboutOnlineExpe
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden flex justify-center bg-white">
-      <div className="relative w-[1728px] max-w-full">
+      <div className="relative w-full" style={{ minHeight: '8000px' }}>
         <AboutOnlineExperiencePage />
       </div>
     </div>

@@ -67,7 +67,7 @@
 }
 
 html {
-  font-size: var(--font-size);
+  font-size: 16px;
   overflow-x: hidden;
   width: 100%;
 }
@@ -84,310 +84,158 @@ body {
   width: 100%;
 }
 
-/* ==================== LANDING PAGE - AGGRESSIVE RESPONSIVE FIX ==================== */
+/* ==================== PREVENT HORIZONTAL SCROLL ==================== */
 
-/* Make the landing page container responsive */
+html, body, #root, main {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* ==================== NAVIGATION - ALWAYS ON TOP ==================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999 !important;
+  width: 100%;
+}
+
+/* Dropdown menu - even higher z-index */
+nav [class*="absolute"] {
+  z-index: 10002 !important;
+}
+
+/* ==================== LANDING PAGE - FIX VISIBILITY ==================== */
+
+/* Remove size-full constraint that causes invisibility */
 [data-name="Landing page"] {
+  width: 1728px !important;
+  height: auto !important;
+  min-height: 8000px !important;
   position: relative !important;
-  width: 100% !important;
-  max-width: 100vw !important;
-  min-height: 100vh !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  margin: 0 auto !important;
-}
-
-/* Scale all absolutely positioned children of landing page */
-[data-name="Landing page"] > * {
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  width: 100% !important;
-  max-width: 100vw !important;
-  margin: 0 auto !important;
-  padding: clamp(1rem, 3vw, 3rem) !important;
-}
-
-/* Fix centered elements inside landing page */
-[data-name="Landing page"] [class*="left-1/2"] {
-  left: 50% !important;
-  transform: translateX(-50%) scale(min(1, 100vw / 1728)) !important;
-  max-width: min(1728px, 95vw) !important;
-}
-
-/* Make all fixed widths responsive inside landing page */
-[data-name="Landing page"] [class*="w-[1728px]"],
-[data-name="Landing page"] [class*="w-[1616px]"],
-[data-name="Landing page"] [class*="w-[1488px]"],
-[data-name="Landing page"] [class*="w-[1200px]"] {
-  width: min(100%, var(--original-width, 100%)) !important;
-  max-width: 95vw !important;
-  padding-left: clamp(1rem, 3vw, 3rem) !important;
-  padding-right: clamp(1rem, 3vw, 3rem) !important;
-}
-
-/* Fix all absolute positioned frames inside landing page */
-[data-name="Landing page"] [class*="absolute"] {
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
   margin: 0 auto !important;
   display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Specific fix for decorative elements */
-[data-name="Landing page"] [class*="absolute"][class*="rotate"] {
+/* ==================== RESPONSIVE - CONTAINER APPROACH ==================== */
+
+/* Desktop - full width */
+@media (min-width: 1729px) {
+  .page-container {
+    width: 1728px;
+    margin: 0 auto;
+  }
+}
+
+/* Laptop - scale to fit */
+@media (min-width: 1024px) and (max-width: 1728px) {
+  .page-container {
+    width: 100%;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  [data-name="Landing page"],
+  [data-name*="About"] {
+    transform: scale(calc(100vw / 1728));
+    transform-origin: top center;
+  }
+}
+
+/* Tablet - scale down more */
+@media (min-width: 768px) and (max-width: 1023px) {
+  [data-name="Landing page"],
+  [data-name*="About"] {
+    transform: scale(0.45);
+    transform-origin: top center;
+    margin-bottom: -4000px;
+  }
+}
+
+/* Mobile - scale to fit small screens */
+@media (max-width: 767px) {
+  [data-name="Landing page"],
+  [data-name*="About"] {
+    transform: scale(0.25);
+    transform-origin: top center;
+    margin-bottom: -6000px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 375px) {
+  [data-name="Landing page"],
+  [data-name*="About"] {
+    transform: scale(0.2);
+    transform-origin: top center;
+    margin-bottom: -6500px;
+  }
+}
+
+/* ==================== ENSURE VISIBILITY ==================== */
+
+/* Force all imported pages to be visible */
+[data-name="Landing page"],
+[data-name="About - Overview Page"],
+[data-name="About - Event Schedule Page"],
+[data-name="About - Get a Booth Page"],
+[data-name="About - Hotels & Flights Page"],
+[data-name="About - Online Experience Page"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   position: relative !important;
-  margin: 2rem auto !important;
 }
 
-/* ==================== TEXT RESPONSIVE ==================== */
-
-/* Huge text - scale down aggressively */
-[class*="text-[160px]"] {
-  font-size: clamp(2rem, 8vw, 10rem) !important;
-  line-height: 1.1 !important;
-}
-
-[class*="text-[120px]"] {
-  font-size: clamp(1.75rem, 7vw, 7.5rem) !important;
-  line-height: 1.1 !important;
-}
-
-[class*="text-[90px]"] {
-  font-size: clamp(1.5rem, 6vw, 5.625rem) !important;
-  line-height: 1.2 !important;
-}
-
-[class*="text-[72px]"] {
-  font-size: clamp(1.25rem, 5vw, 4.5rem) !important;
-  line-height: 1.2 !important;
-}
-
-[class*="text-[64px]"] {
-  font-size: clamp(1.25rem, 4.5vw, 4rem) !important;
-  line-height: 1.2 !important;
-}
-
-[class*="text-[56px]"] {
-  font-size: clamp(1.125rem, 4vw, 3.5rem) !important;
-  line-height: 1.2 !important;
-}
-
-[class*="text-[48px]"] {
-  font-size: clamp(1rem, 3.5vw, 3rem) !important;
-  line-height: 1.3 !important;
-}
-
-[class*="text-[40px]"] {
-  font-size: clamp(1rem, 3vw, 2.5rem) !important;
-  line-height: 1.3 !important;
-}
-
-[class*="text-[32px]"] {
-  font-size: clamp(0.875rem, 2.5vw, 2rem) !important;
-  line-height: 1.4 !important;
-}
-
-[class*="text-[28px]"] {
-  font-size: clamp(0.875rem, 2.25vw, 1.75rem) !important;
-  line-height: 1.4 !important;
-}
-
-[class*="text-[24px]"] {
-  font-size: clamp(0.875rem, 2vw, 1.5rem) !important;
-  line-height: 1.4 !important;
-}
-
-[class*="text-[20px]"],
-[class*="text-[18px]"] {
-  font-size: clamp(0.875rem, 1.5vw, 1.25rem) !important;
-  line-height: 1.5 !important;
-}
-
-/* ==================== SPACING RESPONSIVE ==================== */
-
-/* Large gaps */
-[class*="gap-[88px]"],
-[class*="gap-[80px]"],
-[class*="gap-[72px]"],
-[class*="gap-[64px]"] {
-  gap: clamp(1rem, 3vw, 4rem) !important;
-}
-
-[class*="gap-[57px]"],
-[class*="gap-[48px]"],
-[class*="gap-[40px]"] {
-  gap: clamp(0.75rem, 2.5vw, 2.5rem) !important;
-}
-
-[class*="gap-[32px]"],
-[class*="gap-[24px]"] {
-  gap: clamp(0.5rem, 2vw, 1.5rem) !important;
-}
-
-/* Padding */
-[class*="px-["] {
-  padding-left: clamp(0.5rem, 2vw, 2rem) !important;
-  padding-right: clamp(0.5rem, 2vw, 2rem) !important;
-}
-
-[class*="py-["] {
-  padding-top: clamp(0.5rem, 2vw, 2rem) !important;
-  padding-bottom: clamp(0.5rem, 2vw, 2rem) !important;
-}
-
-/* Left positioning */
-[class*="left-[120px]"],
-[class*="left-[100px]"] {
-  left: clamp(1rem, 5vw, 7.5rem) !important;
-}
-
-/* Top spacing */
-[class*="top-[200px]"],
-[class*="top-[250px]"] {
-  top: clamp(2rem, 8vw, 12.5rem) !important;
-}
-
-/* ==================== IMAGES & MEDIA ==================== */
+/* ==================== IMAGES ==================== */
 
 img {
   max-width: 100%;
   height: auto;
-}
-
-svg {
-  max-width: 100%;
-  height: auto;
+  display: block;
 }
 
 /* ==================== FLEX & GRID ==================== */
 
-[class*="flex"] {
-  min-width: 0;
-}
+/* Don't override flex/grid on imported Figma designs */
+/* Let them maintain their layout */
 
-/* Don't force wrap on landing page elements that need horizontal layout */
-[data-name="Landing page"] [class*="flex"]:not([class*="flex-col"]) {
-  flex-wrap: nowrap;
-}
-
-/* But do wrap on smaller screens */
-@media (max-width: 768px) {
-  [data-name="Landing page"] [class*="flex"]:not([class*="flex-col"]) {
-    flex-wrap: wrap !important;
-  }
-}
-
-[class*="grid"] {
-  display: grid;
-}
-
-/* ==================== MOBILE OPTIMIZATIONS ==================== */
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  /* Stack flex rows */
-  [class*="flex-row"] {
-    flex-direction: column !important;
-  }
-
-  /* Single column grids */
-  [class*="grid-cols-"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Reduce all spacing */
-  [class*="gap-["] {
-    gap: clamp(0.5rem, 2vw, 1rem) !important;
-  }
-
-  /* Make landing page sections stack */
-  [data-name="Landing page"] > * {
-    padding: 1rem !important;
-  }
-}
-
-/* ==================== TABLET OPTIMIZATIONS ==================== */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  [class*="text-["] {
-    font-size: 85% !important;
-  }
-}
-
-/* ==================== NAVIGATION FIX ==================== */
-
-/* Ensure navigation dropdown is on top of everything */
-nav {
-  position: fixed;
-  top: 0;
-  z-index: 9999 !important;
-  width: 100%;
-  max-width: 100vw;
-}
-
-nav [class*="absolute"] {
-  z-index: 10000 !important;
-}
-
-/* Dropdown menu specific fix */
-nav .group [class*="absolute"] {
-  position: absolute !important;
-  z-index: 10001 !important;
-  top: 100% !important;
-  left: 0 !important;
-}
-
-/* ==================== OVERFLOW CONTROL ==================== */
-
-html, body, #root {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-main,
-section,
-article {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* ==================== PREVENT LAYOUT BREAKS ==================== */
+/* ==================== TEXT WRAPPING ==================== */
 
 * {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-/* Prevent horizontal scroll from any element */
-*:not(html):not(body):not(#root) {
-  max-width: 100vw;
+/* ==================== BUTTONS ==================== */
+
+button {
+  cursor: pointer;
 }
 
-/* ==================== SCALE LANDING PAGE ON SMALL SCREENS ==================== */
+/* ==================== UTILITY CLASSES ==================== */
 
-@media (max-width: 1728px) {
-  [data-name="Landing page"] {
-    /* Scale the entire landing page down on smaller screens */
-    transform-origin: top center;
-    width: 100%;
+.mobile-hide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-hide {
+    display: block;
   }
 }
 
-@media (max-width: 640px) {
-  [data-name="Landing page"] {
-    /* Even more aggressive scaling on mobile */
-    padding: 0.5rem !important;
-  }
-  
-  [data-name="Landing page"] > * {
-    padding: 0.5rem !important;
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
   }
 }
