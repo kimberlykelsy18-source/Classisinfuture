@@ -5,7 +5,8 @@
 
 [build]
   publish = "dist"
-  command = "npm install && npm run build"
+  command = "npm install && npm run build && ls -la dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  NPM_CONFIG_LEGACY_PEER_DEPS = "true"

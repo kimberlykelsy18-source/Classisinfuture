@@ -8,5 +8,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     emptyOutDir: true,
+    assetsDir: 'assets',
   },
+  base: './',
 });
