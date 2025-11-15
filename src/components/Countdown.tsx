@@ -34,43 +34,43 @@ export function Countdown() {
   }, [targetDate]);
 
   return (
-    <div className="content-stretch flex gap-[88px] items-start relative shrink-0">
+    <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-[88px] w-full px-4">
       {/* Days */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] text-center w-[288px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] tracking-[-3.2px] w-full">
+      <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-[32px] items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-[48px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none">
           {timeLeft.days}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-[20px] sm:text-[28px] md:text-[36px] lg:text-[48px]">
           Days
         </p>
       </div>
 
       {/* Colon */}
-      <p className="font-['Space_Mono:Bold',sans-serif] leading-[90px] not-italic relative shrink-0 text-[#6923d2] text-[160px] text-nowrap tracking-[-3.2px] whitespace-pre">
+      <p className="font-['Space_Mono:Bold',sans-serif] text-[#6923d2] text-[48px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none">
         :
       </p>
 
       {/* Hours */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] text-center w-[193px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] tracking-[-3.2px] w-full">
+      <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-[32px] items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-[48px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none">
           {String(timeLeft.hours).padStart(2, '0')}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-[20px] sm:text-[28px] md:text-[36px] lg:text-[48px]">
           Hours
         </p>
       </div>
 
       {/* Colon */}
-      <p className="font-['Space_Mono:Bold',sans-serif] leading-[90px] not-italic relative shrink-0 text-[#6923d2] text-[160px] text-nowrap tracking-[-3.2px] whitespace-pre">
+      <p className="font-['Space_Mono:Bold',sans-serif] text-[#6923d2] text-[48px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none">
         :
       </p>
 
       {/* Minutes */}
-      <div className="content-stretch flex flex-col gap-[32px] items-center justify-center leading-[90px] relative shrink-0 text-[#6923d2] w-[204px]">
-        <p className="font-['Space_Mono:Bold',sans-serif] not-italic relative shrink-0 text-[160px] text-right tracking-[-3.2px] w-full">
+      <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-[32px] items-center justify-center text-[#6923d2] text-center">
+        <p className="font-['Space_Mono:Bold',sans-serif] text-[48px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none">
           {String(timeLeft.minutes).padStart(2, '0')}
         </p>
-        <p className="font-['Orbitron:Bold',sans-serif] font-bold relative shrink-0 text-[48px] text-center tracking-[-0.96px] w-full">
+        <p className="font-['Orbitron:Bold',sans-serif] font-bold text-[20px] sm:text-[28px] md:text-[36px] lg:text-[48px]">
           Minutes
         </p>
       </div>
