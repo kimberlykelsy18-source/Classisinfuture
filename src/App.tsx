@@ -39,14 +39,16 @@ export default function App() {
   }, [currentPage]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw]">
+    <div className="flex flex-col min-h-screen bg-white overflow-x-hidden w-full">
       <Toaster position="top-right" richColors />
       
       {/* Fixed Navigation */}
-      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+      </div>
 
-      {/* Page Content with top padding to account for fixed nav */}
-      <main className="flex-grow pt-[80px] md:pt-[120px] w-full overflow-x-hidden max-w-[100vw]">
+      {/* Page Content with top padding to account for fixed nav - flex-grow pushes footer down */}
+      <main className="flex-grow pt-[120px] w-full overflow-x-hidden">
         {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}
         {currentPage === 'about' && <AboutPageWrapper onNavigate={handleNavigate} />}
@@ -56,7 +58,7 @@ export default function App() {
         {currentPage === 'hotels-flights' && <AboutHotelsFlightsPageWrapper onNavigate={handleNavigate} />}
       </main>
 
-      {/* Footer */}
+      {/* Footer - will stick to bottom due to flex-grow on main */}
       <Footer onNavigate={handleNavigate} />
     </div>
   );
