@@ -5,34 +5,28 @@ interface ResponsivePageContainerProps {
 }
 
 export function ResponsivePageContainer({ children }: ResponsivePageContainerProps) {
-  const [scale, setScale] = useState(1);
+  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
-    const calculateScale = () => {
+    const calculateZoom = () => {
       const screenWidth = window.innerWidth;
       const designWidth = 1728; // Figma design width
       
-      // Desktop - show full size
-      if (screenWidth >= 1728) {
-        setScale(1);
+      // Calculate zoom based on screen width
+      let newZoom = screenWidth / designWidth;
+      
+      // Don't zoom beyond 100% on very large screens
+      if (newZoom > 1) {
+        newZoom = 1;
       }
-      // Smaller desktop/laptop - scale down slightly
-      else if (screenWidth >= 1024) {
-        setScale(screenWidth / designWidth);
-      }
-      // Tablet
-      else if (screenWidth >= 768) {
-        setScale(screenWidth / designWidth);
-      }
-      // Mobile
-      else {
-        setScale(screenWidth / designWidth);
-      }
+      
+      setZoom(newZoom);
     };
 
-    calculateScale();
-    window.addEventListener('resize', calculateScale);
-    return () => window.removeEventListener('resize', calculateScale);
+    calculateZoom();
+    window.addEventListener('resize', calculateZoom);
+    
+    return () => window.removeEventListener('resize', calculateZoom);
   }, []);
 
   return (
@@ -41,16 +35,13 @@ export function ResponsivePageContainer({ children }: ResponsivePageContainerPro
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
-        overflow: 'hidden',
         background: 'white',
       }}
     >
       <div
         style={{
           width: '1728px',
-          transformOrigin: 'top center',
-          transform: `scale(${scale})`,
-          transition: 'transform 0.3s ease',
+          zoom: zoom,
         }}
       >
         {children}
