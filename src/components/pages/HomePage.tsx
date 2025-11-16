@@ -27,5 +27,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
     };
   }, [onNavigate]);
 
-  return <LandingPage />;
+  return (
+    <div style={{ 
+      width: '100%', 
+      minHeight: '100vh',
+      display: 'block',
+      visibility: 'visible',
+      opacity: 1,
+      background: 'white',
+      position: 'relative'
+    }}>
+      <LandingPage />
+    </div>
+  );
 }

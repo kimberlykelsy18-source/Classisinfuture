@@ -5,5 +5,17 @@ interface AboutGetABoothPageWrapperProps {
 }
 
 export function AboutGetABoothPageWrapper({ onNavigate }: AboutGetABoothPageWrapperProps) {
-  return <AboutGetABoothPage />;
+  return (
+    <div style={{ 
+      width: '100%', 
+      minHeight: '100vh',
+      display: 'block',
+      visibility: 'visible',
+      opacity: 1,
+      background: 'white',
+      position: 'relative'
+    }}>
+      <AboutGetABoothPage />
+    </div>
+  );
 }

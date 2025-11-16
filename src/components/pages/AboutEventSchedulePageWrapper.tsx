@@ -5,5 +5,17 @@ interface AboutEventSchedulePageWrapperProps {
 }
 
 export function AboutEventSchedulePageWrapper({ onNavigate }: AboutEventSchedulePageWrapperProps) {
-  return <AboutEventSchedulePage />;
+  return (
+    <div style={{ 
+      width: '100%', 
+      minHeight: '100vh',
+      display: 'block',
+      visibility: 'visible',
+      opacity: 1,
+      background: 'white',
+      position: 'relative'
+    }}>
+      <AboutEventSchedulePage />
+    </div>
+  );
 }

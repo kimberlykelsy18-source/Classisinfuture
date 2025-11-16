@@ -6,7 +6,7 @@ interface MobileWrapperProps {
 
 export function MobileWrapper({ children }: MobileWrapperProps) {
   return (
-    <div className="page-container">
+    <div className="responsive-page-wrapper">
       {children}
     </div>
   );

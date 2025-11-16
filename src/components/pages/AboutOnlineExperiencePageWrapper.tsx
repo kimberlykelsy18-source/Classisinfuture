@@ -5,5 +5,17 @@ interface AboutOnlineExperiencePageWrapperProps {
 }
 
 export function AboutOnlineExperiencePageWrapper({ onNavigate }: AboutOnlineExperiencePageWrapperProps) {
-  return <AboutOnlineExperiencePage />;
+  return (
+    <div style={{ 
+      width: '100%', 
+      minHeight: '100vh',
+      display: 'block',
+      visibility: 'visible',
+      opacity: 1,
+      background: 'white',
+      position: 'relative'
+    }}>
+      <AboutOnlineExperiencePage />
+    </div>
+  );
 }

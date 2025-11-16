@@ -40,14 +40,33 @@ export default function App() {
   }, [currentPage]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white w-full">
+    <div 
+      className="flex flex-col min-h-screen bg-white w-full"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        width: '100%',
+        overflow: 'visible'
+      }}
+    >
       <Toaster position="top-right" richColors />
       
       {/* Navigation */}
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Page Content with padding for fixed nav */}
-      <main className="flex-grow pt-16 md:pt-20 lg:pt-24 w-full">
+      <main 
+        className="flex-grow w-full"
+        style={{
+          flexGrow: 1,
+          width: '100%',
+          paddingTop: '80px', // Space for fixed navigation
+          display: 'block',
+          visibility: 'visible',
+          overflow: 'visible'
+        }}
+      >
         <MobileWrapper>
           {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
           {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}

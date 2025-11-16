@@ -60,176 +60,185 @@
   }
 }
 
-/* ==================== RESET ==================== */
+/* ==================== GLOBAL RESET ==================== */
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  overflow-x: hidden;
-}
-
-body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
-#root {
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
 /* ==================== NAVIGATION ==================== */
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   z-index: 9999 !important;
+  width: 100% !important;
 }
 
-/* ==================== FIGMA PAGES - BASE ==================== */
+/* ==================== RESPONSIVE PAGE CONTAINER ==================== */
 
-[data-name="Landing page"],
-[data-name*="About -"] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.responsive-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
   background: white;
 }
 
-/* ==================== DESKTOP - FULL SIZE ==================== */
+/* ==================== FIGMA IMPORTS - MAKE THEM VISIBLE ==================== */
 
-/* For screens 1729px and larger - center the 1728px design */
-@media (min-width: 1729px) {
-  .page-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+/* Force all Figma pages to be visible */
+[data-name="Landing page"],
+[data-name*="About -"],
+[data-name="Tickets page"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
+  background: white !important;
+}
+
+/* ==================== DESKTOP - LARGE SCREENS ==================== */
+
+@media (min-width: 1280px) {
+  .responsive-page-wrapper {
+    max-width: 1728px;
+    margin: 0 auto;
   }
   
   [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
+  [data-name*="About -"],
+  [data-name="Tickets page"] {
+    width: 1728px !important;
+    margin: 0 auto;
+  }
+  
+  /* Override all fixed widths in children */
+  [data-name="Landing page"] > *,
+  [data-name*="About -"] > *,
+  [data-name="Tickets page"] > * {
+    max-width: 1728px !important;
   }
 }
 
-/* For screens exactly 1728px or between 1024-1728px - show full width */
-@media (min-width: 1024px) and (max-width: 1728px) {
-  .page-container {
+/* ==================== DESKTOP - MEDIUM SCREENS ==================== */
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .responsive-page-wrapper {
     width: 100%;
-    overflow-x: auto; /* Allow scroll if needed */
+    padding: 0 20px;
   }
   
   [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    min-width: 1728px;
+  [data-name*="About -"],
+  [data-name="Tickets page"] {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto;
+  }
+  
+  /* Scale down internal fixed-width elements */
+  [data-name="Landing page"] > *,
+  [data-name*="About -"] > *,
+  [data-name="Tickets page"] > * {
+    transform: scale(0.9) !important;
+    transform-origin: top center !important;
   }
 }
 
-/* ==================== TABLET & MOBILE - USE ZOOM ==================== */
+/* ==================== TABLET ==================== */
 
-/* Tablet: 768px - 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  body {
-    overflow-x: hidden !important;
-  }
-  
-  .page-container {
-    width: 100vw;
-    overflow-x: hidden;
+  .responsive-page-wrapper {
+    width: 100%;
+    padding: 0 16px;
   }
   
   [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    zoom: 0.59; /* 1728 * 0.59 ≈ 1020px */
-    -moz-transform: scale(0.59);
-    -moz-transform-origin: 0 0;
+  [data-name*="About -"],
+  [data-name="Tickets page"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Scale content to fit tablet */
+  [data-name="Landing page"] > *,
+  [data-name*="About -"] > *,
+  [data-name="Tickets page"] > * {
+    transform: scale(0.7) !important;
+    transform-origin: top center !important;
   }
 }
 
-/* Mobile landscape: 481px - 767px */
-@media (min-width: 481px) and (max-width: 767px) {
-  body {
-    overflow-x: hidden !important;
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
   }
   
-  .page-container {
-    width: 100vw;
-    overflow-x: hidden;
+  .responsive-page-wrapper {
+    width: 100%;
+    padding: 0 12px;
   }
   
   [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    zoom: 0.44; /* 1728 * 0.44 ≈ 760px */
-    -moz-transform: scale(0.44);
-    -moz-transform-origin: 0 0;
+  [data-name*="About -"],
+  [data-name="Tickets page"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  
+  /* Scale content to fit mobile */
+  [data-name="Landing page"] > *,
+  [data-name*="About -"] > *,
+  [data-name="Tickets page"] > * {
+    transform: scale(0.5) !important;
+    transform-origin: top center !important;
+  }
+  
+  /* Make sure absolutely positioned elements don't overflow */
+  [data-name="Landing page"] [class*="absolute"],
+  [data-name*="About -"] [class*="absolute"],
+  [data-name="Tickets page"] [class*="absolute"] {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto !important;
   }
 }
 
-/* Mobile portrait: 376px - 480px */
-@media (min-width: 376px) and (max-width: 480px) {
-  body {
-    overflow-x: hidden !important;
-  }
-  
-  .page-container {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    zoom: 0.275; /* 1728 * 0.275 ≈ 475px */
-    -moz-transform: scale(0.275);
-    -moz-transform-origin: 0 0;
-  }
-}
+/* ==================== SMALL MOBILE ==================== */
 
-/* Small mobile: 320px - 375px */
-@media (min-width: 320px) and (max-width: 375px) {
-  body {
-    overflow-x: hidden !important;
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
   }
   
-  .page-container {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    zoom: 0.22; /* 1728 * 0.22 ≈ 380px */
-    -moz-transform: scale(0.22);
-    -moz-transform-origin: 0 0;
-  }
-}
-
-/* Extra small: < 320px */
-@media (max-width: 319px) {
-  body {
-    overflow-x: hidden !important;
-  }
-  
-  .page-container {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  [data-name="Landing page"],
-  [data-name*="About -"] {
-    width: 1728px;
-    zoom: 0.18; /* 1728 * 0.18 ≈ 311px */
-    -moz-transform: scale(0.18);
-    -moz-transform-origin: 0 0;
+  [data-name="Landing page"] > *,
+  [data-name*="About -"] > *,
+  [data-name="Tickets page"] > * {
+    transform: scale(0.4) !important;
+    transform-origin: top center !important;
   }
 }
 
@@ -243,11 +252,61 @@ img {
 
 img[src^="figma:asset"] {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 200px;
+  min-height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ==================== FIX FIXED WIDTHS ==================== */
+
+/* Override Tailwind fixed width classes on mobile */
+@media (max-width: 1023px) {
+  [class*="w-[1728px]"],
+  [class*="w-[1200px]"],
+  [class*="w-[1000px]"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Center absolutely positioned elements */
+  [class*="left-1/2"] {
+    left: 50% !important;
+  }
+  
+  [class*="translate-x-[-50%]"] {
+    transform: translateX(-50%) !important;
+  }
 }
 
 /* ==================== BUTTONS ==================== */
 
 button {
   cursor: pointer;
+  max-width: 100%;
+}
+
+/* ==================== TEXT WRAPPING ==================== */
+
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ==================== ENSURE VISIBILITY ==================== */
+
+/* Make sure everything is visible by default */
+div, section, article, main {
+  display: block;
+  visibility: visible;
+}
+
+/* ==================== PRINT ==================== */
+
+@media print {
+  [data-name="Landing page"],
+  [data-name*="About -"],
+  [data-name="Tickets page"] {
+    transform: none !important;
+    width: 100% !important;
+  }
 }

@@ -43,10 +43,16 @@ export function TicketsPageWrapper({ onNavigate }: TicketsPageWrapperProps) {
   }, [onNavigate]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden flex justify-center bg-white">
-      <div className="relative w-[1728px] max-w-full">
-        <TicketsPage />
-      </div>
+    <div style={{ 
+      width: '100%', 
+      minHeight: '100vh',
+      display: 'block',
+      visibility: 'visible',
+      opacity: 1,
+      background: 'white',
+      position: 'relative'
+    }}>
+      <TicketsPage />
     </div>
   );
 }
