@@ -1,4 +1,5 @@
 import AboutEventSchedulePage from '../../imports/AboutEventSchedulePage';
+import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface AboutEventSchedulePageWrapperProps {
   onNavigate: (page: string) => void;
@@ -6,16 +7,8 @@ interface AboutEventSchedulePageWrapperProps {
 
 export function AboutEventSchedulePageWrapper({ onNavigate }: AboutEventSchedulePageWrapperProps) {
   return (
-    <div style={{ 
-      width: '100%', 
-      minHeight: '100vh',
-      display: 'block',
-      visibility: 'visible',
-      opacity: 1,
-      background: 'white',
-      position: 'relative'
-    }}>
+    <ResponsivePageContainer>
       <AboutEventSchedulePage />
-    </div>
+    </ResponsivePageContainer>
   );
 }

@@ -1,4 +1,5 @@
 import AboutGetABoothPage from '../../imports/AboutGetABoothPage';
+import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface AboutGetABoothPageWrapperProps {
   onNavigate: (page: string) => void;
@@ -6,16 +7,8 @@ interface AboutGetABoothPageWrapperProps {
 
 export function AboutGetABoothPageWrapper({ onNavigate }: AboutGetABoothPageWrapperProps) {
   return (
-    <div style={{ 
-      width: '100%', 
-      minHeight: '100vh',
-      display: 'block',
-      visibility: 'visible',
-      opacity: 1,
-      background: 'white',
-      position: 'relative'
-    }}>
+    <ResponsivePageContainer>
       <AboutGetABoothPage />
-    </div>
+    </ResponsivePageContainer>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import LandingPage from '../../imports/LandingPage';
+import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -28,16 +29,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [onNavigate]);
 
   return (
-    <div style={{ 
-      width: '100%', 
-      minHeight: '100vh',
-      display: 'block',
-      visibility: 'visible',
-      opacity: 1,
-      background: 'white',
-      position: 'relative'
-    }}>
+    <ResponsivePageContainer>
       <LandingPage />
-    </div>
+    </ResponsivePageContainer>
   );
 }

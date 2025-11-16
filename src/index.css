@@ -2591,6 +2591,10 @@
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
 
+  .resize {
+    resize: both;
+  }
+
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3885,6 +3889,12 @@
     backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
   }
 
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -4243,12 +4253,23 @@
   padding: 0;
 }
 
-html, body, #root {
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  background: #fff;
   width: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 nav {
@@ -4260,119 +4281,6 @@ nav {
   right: 0 !important;
 }
 
-.responsive-page-wrapper {
-  background: #fff;
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
-
-[data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-  visibility: visible !important;
-  opacity: 1 !important;
-  background: #fff !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100vh !important;
-  display: block !important;
-  position: relative !important;
-}
-
-@media (width >= 1280px) {
-  .responsive-page-wrapper {
-    max-width: 1728px;
-    margin: 0 auto;
-  }
-
-  [data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-    margin: 0 auto;
-    width: 1728px !important;
-  }
-
-  [data-name="Landing page"] > *, [data-name*="About -"] > *, [data-name="Tickets page"] > * {
-    max-width: 1728px !important;
-  }
-}
-
-@media (width >= 1024px) and (width <= 1279px) {
-  .responsive-page-wrapper {
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  [data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-    margin: 0 auto;
-    width: 100% !important;
-    max-width: 1200px !important;
-  }
-
-  [data-name="Landing page"] > *, [data-name*="About -"] > *, [data-name="Tickets page"] > * {
-    transform-origin: top !important;
-    transform: scale(.9) !important;
-  }
-}
-
-@media (width >= 768px) and (width <= 1023px) {
-  .responsive-page-wrapper {
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  [data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  [data-name="Landing page"] > *, [data-name*="About -"] > *, [data-name="Tickets page"] > * {
-    transform-origin: top !important;
-    transform: scale(.7) !important;
-  }
-}
-
-@media (width <= 767px) {
-  html {
-    font-size: 14px;
-  }
-
-  .responsive-page-wrapper {
-    width: 100%;
-    padding: 0 12px;
-  }
-
-  [data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  [data-name="Landing page"] > *, [data-name*="About -"] > *, [data-name="Tickets page"] > * {
-    transform-origin: top !important;
-    transform: scale(.5) !important;
-  }
-
-  [data-name="Landing page"] [class*="absolute"], [data-name*="About -"] [class*="absolute"], [data-name="Tickets page"] [class*="absolute"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 20px auto !important;
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-  }
-}
-
-@media (width <= 480px) {
-  html {
-    font-size: 12px;
-  }
-
-  [data-name="Landing page"] > *, [data-name*="About -"] > *, [data-name="Tickets page"] > * {
-    transform-origin: top !important;
-    transform: scale(.4) !important;
-  }
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -4380,47 +4288,8 @@ img {
 }
 
 img[src^="figma:asset"] {
-  object-fit: cover;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  width: 100%;
-  min-height: 150px;
-}
-
-@media (width <= 1023px) {
-  [class*="w-[1728px]"], [class*="w-[1200px]"], [class*="w-[1000px]"] {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  [class*="left-1/2"] {
-    left: 50% !important;
-  }
-
-  [class*="translate-x-[-50%]"] {
-    transform: translateX(-50%) !important;
-  }
-}
-
-button {
-  cursor: pointer;
-  max-width: 100%;
-}
-
-* {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-div, section, article, main {
-  visibility: visible;
-  display: block;
-}
-
-@media print {
-  [data-name="Landing page"], [data-name*="About -"], [data-name="Tickets page"] {
-    width: 100% !important;
-    transform: none !important;
-  }
+  min-height: 200px;
 }
 
 @property --tw-translate-x {

@@ -1,4 +1,5 @@
 import AboutOnlineExperiencePage from '../../imports/AboutOnlineExperiencePage';
+import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface AboutOnlineExperiencePageWrapperProps {
   onNavigate: (page: string) => void;
@@ -6,16 +7,8 @@ interface AboutOnlineExperiencePageWrapperProps {
 
 export function AboutOnlineExperiencePageWrapper({ onNavigate }: AboutOnlineExperiencePageWrapperProps) {
   return (
-    <div style={{ 
-      width: '100%', 
-      minHeight: '100vh',
-      display: 'block',
-      visibility: 'visible',
-      opacity: 1,
-      background: 'white',
-      position: 'relative'
-    }}>
+    <ResponsivePageContainer>
       <AboutOnlineExperiencePage />
-    </div>
+    </ResponsivePageContainer>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import TicketsPage from '../../imports/TicketsPage';
 import { toast } from 'sonner@2.0.3';
+import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface TicketsPageWrapperProps {
   onNavigate: (page: string) => void;
@@ -43,16 +44,8 @@ export function TicketsPageWrapper({ onNavigate }: TicketsPageWrapperProps) {
   }, [onNavigate]);
 
   return (
-    <div style={{ 
-      width: '100%', 
-      minHeight: '100vh',
-      display: 'block',
-      visibility: 'visible',
-      opacity: 1,
-      background: 'white',
-      position: 'relative'
-    }}>
+    <ResponsivePageContainer>
       <TicketsPage />
-    </div>
+    </ResponsivePageContainer>
   );
 }
