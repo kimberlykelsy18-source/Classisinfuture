@@ -1,14 +1,9 @@
-import AboutOverviewPage from '../../imports/AboutOverviewPage';
-import { ResponsivePageContainer } from '../ResponsivePageContainer';
+import AboutOverviewPageResponsive from '../../imports/AboutOverviewPageResponsive';
 
 interface AboutPageWrapperProps {
   onNavigate: (page: string) => void;
 }
 
 export function AboutPageWrapper({ onNavigate }: AboutPageWrapperProps) {
-  return (
-    <ResponsivePageContainer>
-      <AboutOverviewPage />
-    </ResponsivePageContainer>
-  );
+  return <AboutOverviewPageResponsive onNavigate={onNavigate} />;
 }
