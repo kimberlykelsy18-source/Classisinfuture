@@ -1,13 +1,15 @@
 import svgPaths from "./svg-f6jx11ug60";
-import imgFrame6 from "figma:asset/f44ba939b1b5618f5af1869aada43813575d3f22.png";
-import imgFrame87 from "figma:asset/432e7c780bf5aaf8f514bb4317ac4ca674f57902.png";
-import imgFrame96 from "figma:asset/c242b15cba2281a76fa5e05b4522b3ee2e864704.png";
-import imgFrame97 from "figma:asset/49e306aa9b91721d8fb778b4c22b1914ea7b0475.png";
-import imgFrame98 from "figma:asset/7a75cc4c3315cbb05a841da7e47815dbf56c88d2.png";
-import imgFrame99 from "figma:asset/8752076381f930405c2797b2601b872e10ffcc2d.png";
-import imgImage from "figma:asset/9f561e5fda5a125aef54034d92469cfdcc7bec7e.png";
-import imgImage2 from "figma:asset/3b5c7d38360b24ed714609d44dd5a1accfc30dc5.png";
-import imgImage4 from "figma:asset/27f94ce8a5b0474422aba6d55156aef33edff06f.png";
+
+// Production-ready image URLs that work on GitHub/Netlify
+const imgFrame6 = "https://images.unsplash.com/photo-1563807893646-b6598a2b6fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25mZXJlbmNlJTIwc3RhZ2UlMjBjcm93ZHxlbnwxfHx8fDE3NjM0NTA4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const imgFrame87 = "https://images.unsplash.com/photo-1570106413982-7f2897b8d0c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JsZCUyMG1hcCUyMG5ldHdvcmt8ZW58MXx8fHwxNzYzMzkxNDE5fDA&ixlib=rb-4.1.0&q=80&w=1080";
+const imgFrame96 = "https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MzM4NzI0Mnww&ixlib=rb-4.1.0&q=80&w=1080";
+const imgFrame97 = "https://images.unsplash.com/photo-1758599543120-4e462429a4d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGxlYWRlciUyMGhlYWRzaG90fGVufDF8fHx8MTc2MzQ1MDg2Mnww&ixlib=rb-4.1.0&q=80&w=1080";
+const imgFrame98 = "https://images.unsplash.com/photo-1762341116897-921e2a52f7ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBidXNpbmVzcyUyMGV4ZWN1dGl2ZXxlbnwxfHx8fDE3NjMzODg5NTB8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const imgFrame99 = "https://images.unsplash.com/photo-1739300293504-234817eead52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3N3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MzQ1MDg2Nnww&ixlib=rb-4.1.0&q=80&w=1080";
+const imgImage = "https://images.unsplash.com/photo-1762278805116-118893051302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMHdhdmV8ZW58MXx8fHwxNzYzNDUwODY4fDA&ixlib=rb-4.1.0&q=80&w=1080";
+const imgImage2 = "https://images.unsplash.com/photo-1760138270903-d95903188730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29tcGFueSUyMGxvZ298ZW58MXx8fHwxNzYzMzgxNzk2fDA&ixlib=rb-4.1.0&q=80&w=1080";
+const imgImage4 = "https://images.unsplash.com/photo-1761625424632-c6adc86211d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBwYXJ0bmVyc2hpcCUyMGxvZ298ZW58MXx8fHwxNzYzNDUwODcyfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 // Decorative Components
 function Component4() {
