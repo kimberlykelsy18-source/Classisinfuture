@@ -7,11 +7,8 @@ import imgFrame100 from "figma:asset/8752076381f930405c2797b2601b872e10ffcc2d.pn
 import imgFrame101 from "figma:asset/b02a2578dd40fe6ec9433f582a41cb3474bbea2a.png";
 import imgFrame102 from "figma:asset/49e306aa9b91721d8fb778b4c22b1914ea7b0475.png";
 import imgFrame103 from "figma:asset/7a75cc4c3315cbb05a841da7e47815dbf56c88d2.png";
-import imgFrame197 from "figma:asset/d4b45a1d6708d1b73301ef5cea0dfb20ef63cf87.png";
-import imgFrame198 from "figma:asset/a9b39af3278f2b0b96e0bcaf41ba224036dc8645.png";
-import imgFrame199 from "figma:asset/ccfb970bb724de7806fb2cc8a9e3e6441fcc12fe.png";
-import imgFrame200 from "figma:asset/7f772569eb66c0149573a0dfb67bfd81de028e45.png";
 import React from "react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface AboutOverviewPageResponsiveProps {
   onNavigate?: (page: string) => void;
@@ -76,38 +73,26 @@ export default function AboutOverviewPageResponsive({ onNavigate }: AboutOvervie
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={imgFrame197} 
+            src="https://images.unsplash.com/photo-1521458634394-4829d38b57f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdWx0aWNvbG9yZWQlMjBzdGFpcnMlMjBoYW5kcmFpbHxlbnwxfHx8fDE3NjM0NjkxODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="" 
-            className="w-full h-full object-cover opacity-60"
-          />
-        </div>
-
-        {/* Vertical "CLASS IS" Text - Left Side (hidden on mobile) */}
-        <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2">
-          <img 
-            src={imgFrame198} 
-            alt="Class Is" 
-            className="h-[500px] xl:h-[600px] w-auto object-contain"
-          />
-        </div>
-
-        {/* Vertical "IN FUTURE" Text - Right Side (hidden on mobile) */}
-        <div className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2">
-          <img 
-            src={imgFrame199} 
-            alt="In Future" 
-            className="h-[500px] xl:h-[600px] w-auto object-contain"
+            className="w-full h-full object-cover opacity-40"
           />
         </div>
 
         {/* Hero Content - Centered */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
-          <div className="text-center">
-            <img 
-              src={imgFrame200} 
-              alt="Class is in Future" 
-              className="w-full max-w-4xl mx-auto"
-            />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 text-center">
+          <div className="space-y-6">
+            <h1 className="font-['Anta'] text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+              <span className="block">Class is in</span>
+              <span className="text-[#56aa3e] block">Future</span>
+            </h1>
+            <p className="font-['Inter'] text-white text-xl sm:text-2xl md:text-3xl">
+              <span>by </span>
+              <span className="font-semibold">Tutlee</span>
+            </p>
+            <p className="font-['Afacad'] text-white/90 text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl mx-auto leading-tight pt-8">
+              Where Education Meets Innovation
+            </p>
           </div>
         </div>
       </section>
@@ -235,7 +220,7 @@ export default function AboutOverviewPageResponsive({ onNavigate }: AboutOvervie
               <div key={index} className="group">
                 {/* Image */}
                 <div className="relative rounded-2xl overflow-hidden mb-6 aspect-square">
-                  <img 
+                  <ImageWithFallback 
                     src={member.image} 
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
