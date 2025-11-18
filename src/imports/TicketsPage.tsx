@@ -1915,7 +1915,7 @@ function Frame41() {
 
 export default function TicketsPage() {
   return (
-    <div className="bg-white relative w-full h-[5000px]" data-name="Tickets page">
+    <div className="bg-white relative w-[1728px] h-[5000px]" data-name="Tickets page">
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}
       <Frame58 />

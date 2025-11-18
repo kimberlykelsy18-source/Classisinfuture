@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import LandingPage from '../../imports/LandingPage';
+import LandingPage from '../../imports/LandingPageResponsive';
 import { ResponsivePageContainer } from '../ResponsivePageContainer';
 
 interface HomePageProps {
@@ -11,7 +11,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     // Add click handlers for all buttons
     const handleButtonClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const button = target.closest('[data-name*="Button"]');
+      const button = target.closest('[data-name*="Button"]') || target.closest('button');
       const text = button?.textContent;
 
       if (text?.includes('Get Tickets') || text?.includes('Get a ticket') || text?.includes('Buy Now')) {
@@ -29,8 +29,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [onNavigate]);
 
   return (
-    <ResponsivePageContainer>
-      <LandingPage />
-    </ResponsivePageContainer>
+    <LandingPage />
   );
 }

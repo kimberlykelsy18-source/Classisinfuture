@@ -1454,7 +1454,7 @@ function Frame41() {
 
 export default function AboutEventSchedulePage() {
   return (
-    <div className="bg-white relative w-full h-[6000px]" data-name="About - Event Schedule page">
+    <div className="bg-white relative w-[1728px] h-[6000px]" data-name="About - Event Schedule page">
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}
       <Frame19 />

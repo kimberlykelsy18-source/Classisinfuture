@@ -1,4 +1,4 @@
-import svgPaths from "./svg-ss55fkrxkx";
+import svgPaths from "./svg-f6jx11ug60";
 import imgFrame6 from "figma:asset/f44ba939b1b5618f5af1869aada43813575d3f22.png";
 import imgFrame87 from "figma:asset/432e7c780bf5aaf8f514bb4317ac4ca674f57902.png";
 import imgFrame96 from "figma:asset/c242b15cba2281a76fa5e05b4522b3ee2e864704.png";
@@ -966,24 +966,24 @@ function LogosMeta() {
   return (
     <div className="h-[48px] relative shrink-0 w-[236px]" data-name="logos:meta">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 236 48">
-        <g clipPath="url(#clip0_1_8506)" id="logos:meta">
+        <g clipPath="url(#clip0_23_7903)" id="logos:meta">
           <path d={svgPaths.p16e3800} fill="var(--fill-0, #0081FB)" id="Vector" />
-          <path d={svgPaths.p3263480} fill="url(#paint0_linear_1_8506)" id="Vector_2" />
-          <path d={svgPaths.p2c5c9f00} fill="url(#paint1_linear_1_8506)" id="Vector_3" />
+          <path d={svgPaths.p3263480} fill="url(#paint0_linear_23_7903)" id="Vector_2" />
+          <path d={svgPaths.p2c5c9f00} fill="url(#paint1_linear_23_7903)" id="Vector_3" />
           <path d={svgPaths.p2d19a200} fill="var(--fill-0, white)" id="Vector_4" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_8506" x1="915.988" x2="5844.73" y1="2663.04" y2="2911.93">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_23_7903" x1="915.988" x2="5844.73" y1="2663.04" y2="2911.93">
             <stop stopColor="#0064E1" />
             <stop offset="0.4" stopColor="#0064E1" />
             <stop offset="0.83" stopColor="#0073EE" />
             <stop offset="1" stopColor="#0082FB" />
           </linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1_8506" x1="1121.5" x2="1121.5" y1="3464.85" y2="1645.2">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_23_7903" x1="1121.5" x2="1121.5" y1="3464.85" y2="1645.2">
             <stop stopColor="#0082FB" />
             <stop offset="1" stopColor="#0064E0" />
           </linearGradient>
-          <clipPath id="clip0_1_8506">
+          <clipPath id="clip0_23_7903">
             <rect fill="white" height="48" width="236" />
           </clipPath>
         </defs>
@@ -1980,9 +1980,9 @@ function Footer() {
 
 export default function LandingPage() {
   return (
-    <div className="bg-white relative w-[1728px] h-[8500px]" data-name="Landing page">
+    <div className="bg-white relative size-full" data-name="Landing page">
       <Frame53 />
-      {/* <Frame8 /> - Header removed, using shared Navigation */}
+      <Frame8 />
       <div className="absolute flex h-[332px] items-center justify-center left-1/2 top-[1308px] translate-x-[-50%] w-[1728px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
           <Component />
@@ -2001,7 +2001,7 @@ export default function LandingPage() {
       <Frame33 />
       <Frame40 />
       <Frame46 />
-      {/* <Footer /> - Footer removed, using shared Footer */}
+      <Footer />
     </div>
   );
 }
