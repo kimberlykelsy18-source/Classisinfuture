@@ -4,7 +4,11 @@ import React from "react";
 
 const imgFrame274 = "https://images.unsplash.com/photo-1651405023295-a67e7529cf89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWJyYW50JTIwY29sb3JmdWwlMjBncmFkaWVudHxlbnwxfHx8fDE3NjMzODAzMTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
-export default function TicketsPageResponsive() {
+interface TicketsPageResponsiveProps {
+  onNavigate?: (page: string) => void;
+}
+
+export default function TicketsPageResponsive({ onNavigate }: TicketsPageResponsiveProps) {
   return (
     <div className="w-full min-h-screen bg-white">
       {/* Hero Section with Background */}
@@ -88,6 +92,7 @@ export default function TicketsPageResponsive() {
                 "An opportunity to partake in the wind-down day with access to tours, fun activities, and the official afterparty."
               ]}
               discount="STUDENT DISCOUNT: 50% off (just $100 with valid ID)."
+              onGetTicket={() => onNavigate && onNavigate("checkout")}
             />
 
             {/* Startup Pass Card */}
@@ -104,6 +109,7 @@ export default function TicketsPageResponsive() {
                 "Visibility in the Startup Manifesto Brand and 1-1 demo-day during the event."
               ]}
               discount="We're on a mission to coverage responsible and 1-1 sample during the events for all early-stage brands and VCs."
+              onGetTicket={() => onNavigate && onNavigate("checkout")}
             />
 
             {/* Investor Pass Card */}
@@ -119,6 +125,7 @@ export default function TicketsPageResponsive() {
                 "Access to closed-door deal rooms for content review- Startup screening.",
                 "Exclusive networking with founders & VR networking lounge during the event."
               ]}
+              onGetTicket={() => onNavigate && onNavigate("checkout")}
             />
 
             {/* VIP Pass Card */}
@@ -135,6 +142,7 @@ export default function TicketsPageResponsive() {
                 "VIP badge and swag pack inclusive of exclusive VIP networking lounge access.",
                 "Access to the exclusive VIP networking lounge during the event."
               ]}
+              onGetTicket={() => onNavigate && onNavigate("checkout")}
             />
           </div>
         </div>
@@ -176,9 +184,10 @@ interface TicketCardProps {
   color: "blue" | "green" | "pink" | "purple";
   features: string[];
   discount?: string;
+  onGetTicket?: () => void;
 }
 
-function TicketCard({ title, price, subtitle, color, features, discount }: TicketCardProps) {
+function TicketCard({ title, price, subtitle, color, features, discount, onGetTicket }: TicketCardProps) {
   const colorClasses = {
     blue: {
       bg: "bg-[#dbe4fa]",
@@ -254,7 +263,10 @@ function TicketCard({ title, price, subtitle, color, features, discount }: Ticke
       )}
 
       {/* CTA Button */}
-      <button className="w-full bg-[#6923d2] text-white px-8 py-4 rounded-lg font-['Afacad'] text-lg sm:text-xl hover:bg-[#5a1db8] transition-all duration-300 shadow-lg hover:shadow-xl">
+      <button
+        className="w-full bg-[#6923d2] text-white px-8 py-4 rounded-lg font-['Afacad'] text-lg sm:text-xl hover:bg-[#5a1db8] transition-all duration-300 shadow-lg hover:shadow-xl"
+        onClick={onGetTicket}
+      >
         Get Ticket
       </button>
     </div>

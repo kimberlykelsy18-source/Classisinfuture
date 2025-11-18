@@ -3,6 +3,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/pages/HomePage';
 import { TicketsPageWrapper } from './components/pages/TicketsPageWrapper';
+import { CheckoutPage } from './components/pages/CheckoutPage';
 import { AboutPageWrapper } from './components/pages/AboutPageWrapper';
 import { AboutEventSchedulePageWrapper } from './components/pages/AboutEventSchedulePageWrapper';
 import { AboutGetABoothPageWrapper } from './components/pages/AboutGetABoothPageWrapper';
@@ -10,7 +11,7 @@ import { AboutOnlineExperiencePageWrapper } from './components/pages/AboutOnline
 import { AboutHotelsFlightsPageWrapper } from './components/pages/AboutHotelsFlightsPageWrapper';
 import { Toaster } from 'sonner@2.0.3';
 
-type Page = 'home' | 'tickets' | 'about' | 'event-schedule' | 'get-booth' | 'online-experience' | 'hotels-flights';
+type Page = 'home' | 'tickets' | 'checkout' | 'about' | 'event-schedule' | 'get-booth' | 'online-experience' | 'hotels-flights';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -49,6 +50,7 @@ export default function App() {
       <main className="flex-grow w-full" style={{ paddingTop: '80px' }}>
         {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === 'tickets' && <TicketsPageWrapper onNavigate={handleNavigate} />}
+        {currentPage === 'checkout' && <CheckoutPage onNavigate={handleNavigate} />}
         {currentPage === 'about' && <AboutPageWrapper onNavigate={handleNavigate} />}
         {currentPage === 'event-schedule' && <AboutEventSchedulePageWrapper onNavigate={handleNavigate} />}
         {currentPage === 'get-booth' && <AboutGetABoothPageWrapper onNavigate={handleNavigate} />}
