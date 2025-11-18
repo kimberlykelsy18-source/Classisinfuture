@@ -1980,7 +1980,7 @@ function Footer() {
 
 export default function LandingPage() {
   return (
-    <div className="bg-white relative size-full" data-name="Landing page">
+    <div className="bg-white relative w-full h-[8500px]" data-name="Landing page">
       <Frame53 />
       {/* <Frame8 /> - Header removed, using shared Navigation */}
       <div className="absolute flex h-[332px] items-center justify-center left-1/2 top-[1308px] translate-x-[-50%] w-[1728px]">

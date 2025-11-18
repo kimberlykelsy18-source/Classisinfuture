@@ -60,19 +60,14 @@
   }
 }
 
-/* ==================== RESET ==================== */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
@@ -86,7 +81,7 @@ body {
   min-height: 100vh;
 }
 
-/* ==================== NAVIGATION ==================== */
+/* Navigation - Always Fixed */
 nav {
   position: fixed !important;
   top: 0 !important;
@@ -96,42 +91,18 @@ nav {
   z-index: 9999 !important;
 }
 
-/* ==================== IMAGES ==================== */
+/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-img[src^="figma:asset"] {
+/* Figma asset images fallback - show gradient when image doesn't load */
+img[src*="figma:asset"],
+img[src*="figma%3Aasset"] {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 200px;
-}
-
-/* ==================== FIGMA PAGES FIX ==================== */
-[data-name="Landing page"],
-[data-name*="About -"],
-[data-name="Tickets page"] {
-  min-height: 8500px !important;
-  height: auto !important;
-  position: relative !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Make sure size-full doesn't collapse */
-.size-full {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 8500px !important;
-}
-
-/* Force all child elements to be visible */
-[data-name="Landing page"] > *,
-[data-name*="About -"] > *,
-[data-name="Tickets page"] > * {
-  position: absolute;
-  visibility: visible !important;
-  display: block !important;
+  min-height: 100px;
+  width: 100%;
+  object-fit: cover;
 }

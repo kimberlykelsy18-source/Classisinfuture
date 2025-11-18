@@ -1776,7 +1776,7 @@ function Frame29() {
 
 export default function AboutOnlineExperiencePage() {
   return (
-    <div className="bg-white relative size-full" data-name="About - Online Experience page">
+    <div className="bg-white relative w-full h-[6000px]" data-name="About - Online Experience page">
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}
       <Frame31 />

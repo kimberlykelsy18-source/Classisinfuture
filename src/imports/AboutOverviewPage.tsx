@@ -1671,7 +1671,7 @@ function Frame46() {
 
 export default function AboutOverviewPage() {
   return (
-    <div className="bg-white relative size-full" data-name="About - Overview page">
+    <div className="bg-white relative w-full h-[5500px]" data-name="About - Overview page">
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}
       <Frame33 />

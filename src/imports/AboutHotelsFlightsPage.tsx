@@ -2446,7 +2446,7 @@ function Frame60() {
 
 export default function AboutHotelsFlightsPage() {
   return (
-    <div className="bg-white relative size-full" data-name="About - Hotels & Flights page">
+    <div className="bg-white relative w-full h-[7000px]" data-name="About - Hotels & Flights page">
       <Frame61 />
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}

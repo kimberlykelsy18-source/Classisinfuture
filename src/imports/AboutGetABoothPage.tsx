@@ -1883,7 +1883,7 @@ function Group10() {
 
 export default function AboutGetABoothPage() {
   return (
-    <div className="bg-white relative size-full" data-name="About - Get a Booth page">
+    <div className="bg-white relative w-full h-[6500px]" data-name="About - Get a Booth page">
       {/* <Frame5 /> - Header removed, using shared Navigation */}
       {/* <Footer /> - Footer removed, using shared Footer */}
       <Frame18 />
