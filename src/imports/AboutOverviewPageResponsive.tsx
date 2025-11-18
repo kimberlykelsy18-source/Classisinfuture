@@ -1,14 +1,7 @@
 /* RESPONSIVE ABOUT OVERVIEW PAGE - Centered Layout with Proper Spacing */
-import imgFrame96 from "figma:asset/9e19db1410ad54c763cde7258cb30e6259592838.png";
-import imgDanielLiigus from "figma:asset/6ba846e20f5990c2d56de6ebadf4172a17996da4.png";
-import imgFrame98 from "figma:asset/cd9a7169cbc80ef3a7d39d6082769457a3990f0c.png";
-import imgFrame99 from "figma:asset/f971fc3dc319970b218220b3b0540c3cb2e9b2f3.png";
-import imgFrame100 from "figma:asset/8752076381f930405c2797b2601b872e10ffcc2d.png";
-import imgFrame101 from "figma:asset/b02a2578dd40fe6ec9433f582a41cb3474bbea2a.png";
-import imgFrame102 from "figma:asset/49e306aa9b91721d8fb778b4c22b1914ea7b0475.png";
-import imgFrame103 from "figma:asset/7a75cc4c3315cbb05a841da7e47815dbf56c88d2.png";
 import React from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { teamImages } from "./team-images";
 
 interface AboutOverviewPageResponsiveProps {
   onNavigate?: (page: string) => void;
@@ -20,49 +13,49 @@ export default function AboutOverviewPageResponsive({ onNavigate }: AboutOvervie
       name: "Ebube Dike",
       role: "Head, Follow-Up & Partnerships",
       email: "Ebube@tutlee.com",
-      image: imgFrame96,
+      image: teamImages.ebubeDike,
     },
     {
       name: "Daniel Liigus",
       role: "Operations & Logistics",
       email: "Daniel@tutlee.com",
-      image: imgDanielLiigus,
+      image: teamImages.danielLiigus,
     },
     {
       name: "Flourish Ralph",
       role: "Program Content & Distribution",
       email: "Flourish@tutlee.com",
-      image: imgFrame98,
+      image: teamImages.flourishRalph,
     },
     {
       name: "Kimberly Kelsy",
       role: "Operations & Logistics",
       email: "Kimberly@tutlee.com",
-      image: imgFrame99,
+      image: teamImages.kimberlyKelsy,
     },
     {
       name: "Rebecca Davies",
       role: "Lead, Follow-Up & Partnerships",
       email: "Rebecca@tutlee.com",
-      image: imgFrame100,
+      image: teamImages.rebeccaDavies,
     },
     {
       name: "Victory Nwaka",
       role: "Marketing & Community",
       email: "Victory@tutlee.com",
-      image: imgFrame101,
+      image: teamImages.victoryNwaka,
     },
     {
       name: "Eli Ukwaja",
       role: "Lead, Operations & Logistics",
       email: "Eli@tutlee.com",
-      image: imgFrame102,
+      image: teamImages.eliUkwaja,
     },
     {
       name: "Aydin Scott",
       role: "Marketing & Community",
       email: "Aydin@tutlee.com",
-      image: imgFrame103,
+      image: teamImages.aydinScott,
     },
   ];
 
