@@ -162,6 +162,7 @@ export default function LandingPage() {
     days: 0,
     hours: 0,
     minutes: 0,
+    seconds: 0,
   });
 
   React.useEffect(() => {
@@ -175,13 +176,14 @@ export default function LandingPage() {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        setTimeLeft({ days, hours, minutes });
+        setTimeLeft({ days, hours, minutes, seconds });
       }
     };
 
     updateCountdown();
-    const timer = setInterval(updateCountdown, 60000);
+    const timer = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -190,13 +192,13 @@ export default function LandingPage() {
     <div className="w-full min-h-screen bg-white">
       {/* Hero Section - CENTERED WITH MAX-WIDTH */}
       <section className="relative w-full overflow-hidden bg-white flex justify-center">
-        <div className="w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 sm:py-24 md:py-32 lg:py-40">
+        <div className="w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24">
           <Component4 />
           <Component5 />
           
           <div className="relative z-10 w-full">
             {/* Hero Text */}
-            <div className="text-center space-y-10 mb-32 w-full">
+            <div className="text-center space-y-6 mb-12 w-full">
               <h1 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-black leading-tight w-full px-4">
                 Education 2040: What We Build Today,<br />
                 They'll Inherit Tomorrow
@@ -207,15 +209,15 @@ export default function LandingPage() {
               </p>
             </div>
             
-            {/* CTA Button with MASSIVE spacing */}
-            <div className="text-center my-32 w-full">
+            {/* CTA Button */}
+            <div className="text-center my-12 w-full">
               <button className="bg-[#6923d2] text-white px-10 py-5 sm:px-12 sm:py-6 lg:px-16 lg:py-7 rounded-xl font-['Afacad'] text-lg sm:text-xl lg:text-2xl hover:bg-[#5a1db8] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105">
                 Get a ticket to Class is in Future 2026
               </button>
             </div>
             
             {/* Hero Image */}
-            <div className="w-full rounded-3xl overflow-hidden shadow-2xl mt-32">
+            <div className="w-full rounded-3xl overflow-hidden shadow-2xl mt-12">
               <img 
                 src={imgFrame6} 
                 alt="Conference Hero" 
@@ -227,11 +229,11 @@ export default function LandingPage() {
       </section>
 
       {/* Why Should You Attend Section - CENTERED */}
-      <section className="w-full bg-white py-20 sm:py-24 md:py-32 lg:py-40 flex justify-center">
+      <section className="w-full bg-white py-16 sm:py-20 flex justify-center">
         <div className="w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
           {/* Section Header */}
-          <div className="text-center space-y-10 mb-24 w-full">
-            <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black tracking-tight w-full px-4">
+          <div className="text-center space-y-6 mb-16 w-full">
+            <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black tracking-tight px-4 w-full">
               Why Should You Attend?
             </h2>
             <p className="font-['Afacad'] text-xl sm:text-2xl md:text-3xl text-black w-full mx-auto leading-relaxed px-6">
@@ -371,11 +373,11 @@ export default function LandingPage() {
       </section>
 
       {/* 6 Continents Section - CENTERED */}
-      <section className="w-full bg-white py-20 sm:py-24 md:py-32 lg:py-40 flex justify-center">
+      <section className="w-full bg-white py-16 sm:py-20 flex justify-center">
         <div className="w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
           <div className="w-full">
             {/* Section Header */}
-            <div className="text-center space-y-10 mb-24 w-full">
+            <div className="text-center space-y-6 mb-16 w-full">
               <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black tracking-tight px-4 w-full">
                 6 Continents, 1 Shared Vision
               </h2>
@@ -385,7 +387,7 @@ export default function LandingPage() {
             </div>
 
             {/* World Map */}
-            <div className="w-full rounded-3xl overflow-hidden shadow-2xl mb-24">
+            <div className="w-full rounded-3xl overflow-hidden shadow-2xl mb-16">
               <img 
                 src={imgFrame87} 
                 alt="World Map" 
@@ -393,8 +395,8 @@ export default function LandingPage() {
               />
             </div>
 
-            {/* CTA Buttons with MASSIVE spacing */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-24 mb-60 w-full">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
               <button className="bg-[#6923d2] text-white px-10 py-5 sm:px-12 sm:py-6 lg:px-16 lg:py-7 rounded-xl font-['Afacad'] text-lg sm:text-xl lg:text-2xl hover:bg-[#5a1db8] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 w-full sm:w-auto">
                 Get Tickets
               </button>
@@ -407,7 +409,7 @@ export default function LandingPage() {
       </section>
 
       {/* Our Speakers Section - CENTERED */}
-      <section className="w-full bg-[#9662e5] pt-40 pb-20 sm:pt-48 sm:pb-24 md:pt-56 md:pb-32 lg:pt-64 lg:pb-40 relative overflow-hidden flex justify-center">
+      <section className="w-full bg-[#9662e5] pt-16 sm:pt-20 pb-16 sm:pb-20 relative overflow-hidden flex justify-center">
         <div className="absolute left-[-130px] bottom-0 h-[312px] w-[274px] opacity-20 pointer-events-none">
           <img src={imgImage} alt="" className="w-full h-full object-cover" />
         </div>
@@ -417,11 +419,11 @@ export default function LandingPage() {
 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight text-center mb-20">
+            <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight text-center mb-16">
               Our Speakers
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-32">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
               {/* Speaker 1 */}
               <div className="bg-[#f3eefc] border-2 border-[#6d24db] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-105">
                 <div className="aspect-square w-full overflow-hidden bg-white">
@@ -493,50 +495,63 @@ export default function LandingPage() {
       </section>
 
       {/* Countdown Timer Section - CENTERED */}
-      <section className="w-full bg-white py-20 sm:py-24 md:py-32 lg:py-40">
+      <section className="w-full bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="font-['Afacad'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black tracking-tight leading-tight">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="font-['Afacad'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight leading-tight px-4">
                 <span>CLASS IS IN </span>
                 <span className="text-[#6923d2]">FUTURE</span>
                 <span> STARTS IN</span>
               </h2>
             </div>
 
-            <div className="flex justify-center items-center gap-6 sm:gap-10 lg:gap-16">
-              <div className="flex flex-col items-center">
-                <p className="font-['Space_Mono'] text-7xl sm:text-8xl md:text-9xl text-[#6923d2] tracking-tight leading-none">
+            <div className="flex justify-center items-center gap-3 sm:gap-6 md:gap-8 lg:gap-12 overflow-x-auto">
+              <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px] md:min-w-[100px]">
+                <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
                   {timeLeft.days}
                 </p>
-                <p className="font-['Orbitron'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#6923d2] tracking-tight mt-6">
+                <p className="font-['Orbitron'] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#6923d2] tracking-tight mt-2 sm:mt-3 md:mt-4">
                   Days
                 </p>
               </div>
 
-              <p className="font-['Space_Mono'] text-7xl sm:text-8xl md:text-9xl text-[#6923d2] tracking-tight leading-none">
+              <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
                 :
               </p>
 
-              <div className="flex flex-col items-center">
-                <p className="font-['Space_Mono'] text-7xl sm:text-8xl md:text-9xl text-[#6923d2] tracking-tight leading-none">
+              <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px] md:min-w-[100px]">
+                <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
                   {timeLeft.hours}
                 </p>
-                <p className="font-['Orbitron'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#6923d2] tracking-tight mt-6">
+                <p className="font-['Orbitron'] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#6923d2] tracking-tight mt-2 sm:mt-3 md:mt-4">
                   Hours
                 </p>
               </div>
 
-              <p className="font-['Space_Mono'] text-7xl sm:text-8xl md:text-9xl text-[#6923d2] tracking-tight leading-none">
+              <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
                 :
               </p>
 
-              <div className="flex flex-col items-center">
-                <p className="font-['Space_Mono'] text-7xl sm:text-8xl md:text-9xl text-[#6923d2] tracking-tight leading-none">
+              <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px] md:min-w-[100px]">
+                <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
                   {timeLeft.minutes}
                 </p>
-                <p className="font-['Orbitron'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#6923d2] tracking-tight mt-6">
+                <p className="font-['Orbitron'] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#6923d2] tracking-tight mt-2 sm:mt-3 md:mt-4">
                   Minutes
+                </p>
+              </div>
+
+              <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
+                :
+              </p>
+
+              <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px] md:min-w-[100px]">
+                <p className="font-['Space_Mono'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#6923d2] tracking-tight leading-none">
+                  {timeLeft.seconds}
+                </p>
+                <p className="font-['Orbitron'] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#6923d2] tracking-tight mt-2 sm:mt-3 md:mt-4">
+                  Seconds
                 </p>
               </div>
             </div>
