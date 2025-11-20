@@ -1,14 +1,9 @@
-import AboutOnlineExperiencePage from '../../imports/AboutOnlineExperiencePage';
-import { ResponsivePageContainer } from '../ResponsivePageContainer';
+import AboutOnlineExperiencePageResponsive from '../../imports/AboutOnlineExperiencePageResponsive';
 
 interface AboutOnlineExperiencePageWrapperProps {
   onNavigate: (page: string) => void;
 }
 
 export function AboutOnlineExperiencePageWrapper({ onNavigate }: AboutOnlineExperiencePageWrapperProps) {
-  return (
-    <ResponsivePageContainer>
-      <AboutOnlineExperiencePage />
-    </ResponsivePageContainer>
-  );
+  return <AboutOnlineExperiencePageResponsive onNavigate={onNavigate} />;
 }
