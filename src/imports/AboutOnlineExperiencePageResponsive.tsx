@@ -1,11 +1,8 @@
 /* RESPONSIVE ONLINE EXPERIENCE PAGE - Maintaining Original Design with Responsive Layout */
 import React from "react";
 import svgPaths from "./svg-c8bbuoptfk";
-import imgTeamMember from "figma:asset/2e3c1f539a79a8861fa5583dc9b12980f2306b5d.png";
-import imgTeamMember1 from "figma:asset/57d781e8b9fa61e261dc0fc9271b6a58940073b7.png";
-import imgTeamMember2 from "figma:asset/e2fc3059463cfbd7f47799daca792469a64af38e.png";
-import imgTeamMember3 from "figma:asset/58fbaceb215656a201e22dca66077eb395788d91.png";
 import imgPaper16 from "figma:asset/8d68b68076f43fe952040d88e7b094d513b71efb.png";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface AboutOnlineExperiencePageResponsiveProps {
   onNavigate?: (page: string) => void;
@@ -90,8 +87,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {/* Card 1 - Live & On-Demand Access */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <img 
-                src={imgTeamMember} 
+              <ImageWithFallback 
+                src="figma:asset/2e3c1f539a79a8861fa5583dc9b12980f2306b5d.png" 
                 alt="Live & On-Demand Access" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -112,8 +109,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 2 - Virtual Networking Lounges */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <img 
-                src={imgTeamMember1} 
+              <ImageWithFallback 
+                src="figma:asset/57d781e8b9fa61e261dc0fc9271b6a58940073b7.png" 
                 alt="Virtual Networking Lounges" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -134,8 +131,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 3 - Global Community Access */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <img 
-                src={imgTeamMember2} 
+              <ImageWithFallback 
+                src="figma:asset/e2fc3059463cfbd7f47799daca792469a64af38e.png" 
                 alt="Global Community Access" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -156,8 +153,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 4 - Digital Expo Hall */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <img 
-                src={imgTeamMember3} 
+              <ImageWithFallback 
+                src="figma:asset/58fbaceb215656a201e22dca66077eb395788d91.png" 
                 alt="Digital Expo Hall" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
