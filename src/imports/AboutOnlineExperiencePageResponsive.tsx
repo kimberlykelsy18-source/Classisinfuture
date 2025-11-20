@@ -87,8 +87,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {/* Card 1 - Live & On-Demand Access */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <ImageWithFallback 
-                src="figma:asset/2e3c1f539a79a8861fa5583dc9b12980f2306b5d.png" 
+              <img 
+                src="https://images.unsplash.com/photo-1518724720933-d73c1fea476e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMGxhcHRvcCUyMGNvbXB1dGVyJTIwdGFibGV8ZW58MXx8fHwxNzYzNjQwNjMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Live & On-Demand Access" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -109,8 +109,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 2 - Virtual Networking Lounges */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <ImageWithFallback 
-                src="figma:asset/57d781e8b9fa61e261dc0fc9271b6a58940073b7.png" 
+              <img 
+                src="https://images.unsplash.com/photo-1758526213969-61068ad19a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0d28lMjB3b21lbiUyMGNvdWNoJTIwdGFsa2luZyUyMHBob25lc3xlbnwxfHx8fDE3NjM2NDA2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Virtual Networking Lounges" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -131,8 +131,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 3 - Global Community Access */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <ImageWithFallback 
-                src="figma:asset/e2fc3059463cfbd7f47799daca792469a64af38e.png" 
+              <img 
+                src="https://images.unsplash.com/photo-1621891333266-0e9402242154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBiZWQlMjBsYXB0b3AlMjBjb21wdXRlcnxlbnwxfHx8fDE3NjM2NDA2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Global Community Access" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -153,8 +153,8 @@ export default function AboutOnlineExperiencePageResponsive({ onNavigate }: Abou
 
             {/* Card 4 - Digital Expo Hall */}
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
-              <ImageWithFallback 
-                src="figma:asset/58fbaceb215656a201e22dca66077eb395788d91.png" 
+              <img 
+                src="https://images.unsplash.com/photo-1718030323555-214805b7f884?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXJnZSUyMHJvb20lMjBsaWdodHMlMjBjZWlsaW5nfGVufDF8fHx8MTc2MzY0MDYzNHww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Digital Expo Hall" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
