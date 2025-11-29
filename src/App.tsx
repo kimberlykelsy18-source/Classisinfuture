@@ -11,6 +11,8 @@ import { AboutOnlineExperiencePageWrapper } from './components/pages/AboutOnline
 import { AboutHotelsFlightsPageWrapper } from './components/pages/AboutHotelsFlightsPageWrapper';
 import { Toaster } from 'sonner@2.0.3';
 
+// Updated: Hotels & Flights page now fully responsive
+
 type Page = 'home' | 'tickets' | 'checkout' | 'about' | 'event-schedule' | 'get-booth' | 'online-experience' | 'hotels-flights';
 
 export default function App() {
@@ -43,7 +45,7 @@ export default function App() {
     <div className="flex flex-col min-h-screen bg-white w-full">
       <Toaster position="top-right" richColors />
       
-      {/* Navigation */}
+      {/* Main Navigation */}
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Page Content */}

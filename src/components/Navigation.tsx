@@ -108,6 +108,15 @@ export function Navigation({ currentPage = 'home', onNavigate }: NavigationProps
                     >
                       Online Experience
                     </button>
+                    <button 
+                      onClick={() => { 
+                        onNavigate('hotels-flights'); 
+                        setAboutDropdownOpen(false); 
+                      }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                    >
+                      Hotels & Flights
+                    </button>
                   </div>
                 </div>
               </div>
@@ -201,6 +210,15 @@ export function Navigation({ currentPage = 'home', onNavigate }: NavigationProps
                   className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
                 >
                   Online Experience
+                </button>
+                <button 
+                  onClick={() => { 
+                    onNavigate('hotels-flights'); 
+                    setMobileMenuOpen(false); 
+                  }}
+                  className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded font-['Afacad:Medium',sans-serif] text-base transition-colors"
+                >
+                  Hotels & Flights
                 </button>
               </div>
               
