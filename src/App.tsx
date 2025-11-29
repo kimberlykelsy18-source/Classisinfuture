@@ -41,6 +41,11 @@ export default function App() {
     window.history.pushState({ page: currentPage }, '', path);
   }, [currentPage]);
 
+  // Set document title
+  useEffect(() => {
+    document.title = 'Class is in Future';
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-white w-full">
       <Toaster position="top-right" richColors />
